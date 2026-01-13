@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+section[id] {
+  scroll-margin-top: 100px; /* Erzeugt Platz für die Navbar beim Scroll-Sprung */
+}

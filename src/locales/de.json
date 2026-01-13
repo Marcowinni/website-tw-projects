@@ -1,0 +1,214 @@
+{
+  "header": {
+    "nav": {
+      "home": "Home",
+      "services": "Services",
+      "references": "Referenzen",
+      "contact": "Kontakt",
+      "about": "Über uns"
+    },
+    "cta": "Erstberatung vereinbaren"
+  },
+  "hero": {
+    "title_main": "„Wir erschaffen Webseiten,",
+    "title_highlight": "die man nicht vergisst.“",
+    "subtitle_main": "Massgeschneiderte Nutzererlebnisse & ästhetische Perfektion",
+    "subtitle_sub": "für Marken, die den",
+    "subtitle_highlight": "Standard setzen"
+  },
+  "services": {
+  "blue_title": "Unsere Services",
+  "web": {
+    "title": "Unsere Website-Pakete",
+    "subtitle": "Professionelle Webauftritte für jedes Bedürfnis – transparent und leistungsstark.",
+    "items": [
+      {
+        "id": "web-landing",
+        "title": "Landing Page",
+        "price": "600 - 800 CHF",
+        "delivery": "Live in 1-3 Tagen",
+        "features": ["One Pager / Landing Page", "Content Erstellung", "Basic SEO"],
+        "cta": "Offerte erhalten",
+        "ctaLink": "https://docs.google.com/forms/d/e/1FAIpQLSe4dG3qWH5X0QtzPMI0v-XBltnGFsEsMUUWw0u_lvEAJyYgag/viewform?usp=dialog"
+      },
+      {
+        "id": "web-business",
+        "title": "Business Webseite",
+        "price": "2'000 - 2'500 CHF",
+        "delivery": "Live in 3-5 Tagen",
+        "isBest": true,
+        "features": ["Unlimitierte Unterseiten", "CMS / Datenbank", "Ausführlicheres SEO"],
+        "cta": "Offerte erhalten",
+        "ctaLink": "https://docs.google.com/forms/d/e/1FAIpQLSe4dG3qWH5X0QtzPMI0v-XBltnGFsEsMUUWw0u_lvEAJyYgag/viewform?usp=dialog"
+      },
+      {
+        "id": "web-shop",
+        "title": "Online-Shop",
+        "price": "3'700 - 4'200 CHF",
+        "delivery": "Live in 10-14 Tagen",
+        "features": ["Unlimitierte Produkte", "Eigene Admin APP", "Produktfotos", "Produktimport"],
+        "cta": "Offerte erhalten",
+        "ctaLink": "https://docs.google.com/forms/d/e/1FAIpQLSe4dG3qWH5X0QtzPMI0v-XBltnGFsEsMUUWw0u_lvEAJyYgag/viewform?usp=dialog"
+      }
+    ]
+  },
+  "ai": {
+    "title": "KI Sichtbarkeits Services",
+    "subtitle": "Sichtbarkeit & Empfehlungen in ChatGPT, Google AI & Co.",
+    "items": [
+      {
+        "id": "ai-audit",
+        "title": "KI-Visibility Audit",
+        "price": "800 - 1'000 CHF",
+        "delivery": "Analyse & Strategie",
+        "features": ["Detaillierte Analyse", "Konkrete Todo Liste (ca. 1 Seite)", "Sichtbarkeits-Check"],
+        "cta": "Offerte erhalten",
+        "ctaLink": "/#contact"
+      },
+      {
+        "id": "ai-setup",
+        "title": "KI-Visibility Setup",
+        "price": "2'000 - 4'500 CHF",
+        "delivery": "Full Implementation",
+        "features": ["KI-optimierte Datenstruktur", "Firma für KI verständlich machen", "Empfehlbarkeit in LLMs steigern"],
+        "cta": "Offerte erhalten",
+        "ctaLink": "#contact"
+      }
+    ]
+  },
+  "video": {
+      "title": "KI Marketing Videos",
+      "subtitle": "Professioneller Video-Content für Social Media & Ads – ohne teure Drehtage.",
+      "items": [
+        {
+          "id": "video-social",
+          "title": "Social Media Paket",
+          "price": "1'500 - 2'500 CHF",
+          "delivery": "Paket: 1 Marketing Video",
+          "isBest": true,
+          "features": ["Realistische KI-Avatare", "Skript & Storyboard inklusive", "Perfekt für Social Media Ads"],
+          "cta": "Offerte erhalten",
+          "ctaLink": "/#contact"
+        }
+      ]
+    }
+  },
+
+
+  "kontakt": {
+    "blue_title": "Kontakt",
+    "title": "Bereit für dein Projekt?",
+    "subtitle": "Kontaktiere uns direkt für ein unverbindliches Angebot oder eine kostenlose Erstberatung.",
+    "whatsapp_label": "WhatsApp Scan",
+    "email_label": "E-Mail schreiben",
+    "phone_label": "Anrufen",
+    "contact_button": "Kontakt aufnehmen"
+  },
+
+  "references": {
+    "blue_title": "Unsere Projekte",
+    "projekte_title": "Alle Projekte ansehen",
+    "title": "Ausgewählte Projekte",
+    "subtitle": "Ein Einblick in unsere jüngsten Arbeiten und digitalen Transformationen.",
+    "items": [
+      {
+        "name": "DigitalSens",
+        "description": "Plattform für moderne KI-Bildung und digitale Kompetenz. Hochperformante Web-Applikation mit Fokus auf User Experience.",
+        "link": "https://www.digitalsens.ch",
+        "video": "/demo_digitalsens.mp4",
+        "tags": ["Web Design", "GEO"]
+      },
+      {
+        "name": "Memora-Moments",
+        "description": "Design-orientierte Plattform für emotionale Erinnerungen mit Fokus auf Ästhetik, Storytelling und Markenidentität.",
+        "link": "https://www.memora-moments.ch",
+        "video": "/demo_memora_moments.mp4",
+        "tags": ["Web Design", "GEO"]
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "Referenzen",
+    "subtitle": "Was unsere Partner über TW Projects Services sagen.",
+    "swipeHint": "Wischen für mehr",
+    "items": []
+  },
+  "about": {
+    "title": "Über uns",
+    "mission_title": "Unsere Vision",
+    "mission_text": "Wir verbinden Design und Technologie, damit du mit deiner Website mehr Anfragen gewinnst und Prozesse mit KI spürbar vereinfachst.",
+    "team_title": "Das Team",
+    "marco_role": "Co-Founder & Tech Lead",
+    "till_role": "Co-Founder & Strategy",
+    "back_button": "Zurück",
+    "bild_weiter": "Klicken für das nächste Bild",
+    "hobbys_title": "Hobbys & Interessen",
+    "team_details": {
+      "marco": {
+        "name": "Marco Winistörfer",
+        "description": "Als technischer Kopf bei TW Services habe ich Freude daran, digitale und KI-basierte Lösungen zu bauen, die wirklich funktionieren. Ich unterstütze Unternehmen dabei, Technologie sinnvoll einzusetzen – nicht als Selbstzweck, sondern als Werkzeug, das den Arbeitsalltag einfacher und effizienter macht.",
+        "hobbies": ["Kitesurfen", "Wandern", "Fussball"],
+        "images": ["/about/wini.png", "/about/wini_kitesurf.jpeg", "/about/wini_wandern.jpeg"]
+      },
+      "till": {
+        "name": "Till Schubiger",
+        "description": "Strategie und Innovation sind mein Zuhause. Ich sorge dafür, dass unsere digitalen Lösungen nicht nur technisch brillant sind, sondern auch einen echten geschäftlichen Mehrwert für unsere Kunden generieren.",
+        "hobbies": ["Wandern", "Reisen", "Fitness"],
+        "images": ["/about/till.jpg", "/about/till_schnee.jpeg", "/about/till_australien.jpeg"]
+      }
+    }
+  },
+  "footer": {
+    "description": "TW Projects Services – Smarte Weblösungen und KI-Automatisierung für moderne Unternehmen.",
+    "company": "Rechtliches",
+    "rights": "Alle Rechte vorbehalten.",
+    "links": {
+      "imprint": "Impressum",
+      "terms": "AGB"
+    }
+  },
+  "legal": {
+    "imprint_title": "Impressum",
+    "terms_title": "ALLGEMEINE GESCHÄFTSBEDINGUNGEN (AGB)",
+    "back_home": "Zurück",
+    "company_name": "TW Projects GmbH",
+    "address_line1": "Breitenmattstrasse 69",
+    "address_line2": "8635 Dürnten, Schweiz",
+    "email": "tillandwin@gmail.com",
+    "contact_title": "Kontakt",
+    "commercial_register": "",
+    "vat_id": "",
+    "disclaimer_title": "Haftungsausschluss",
+    "disclaimer_text": "Der Autor übernimmt keinerlei Gewähr hinsichtlich der inhaltlichen Richtigkeit, Genauigkeit, Aktualität, Zuverlässigkeit und Vollständigkeit der Informationen.\n\nHaftungsansprüche gegen den Autor wegen Schäden materieller oder immaterieller Art, welche aus dem Zugriff oder der Nutzung bzw. Nichtnutzung der veröffentlichten Informationen, durch Missbrauch der Verbindung oder durch technische Störungen entstanden sind, werden ausgeschlossen.\n\nAlle Angebote sind unverbindlich. Der Autor behält es sich ausdrücklich vor, Teile der Seiten oder das gesamte Angebot ohne besondere Ankündigung zu verändern, zu ergänzen, zu löschen oder die Veröffentlichung zeitweise oder endgültig einzustellen.",
+    "links_title": "Haftung für Links",
+    "links_text": "Verweise und Links auf Webseiten Dritter liegen ausserhalb unseres Verantwortungsbereichs. Es wird jegliche Verantwortung für solche Webseiten abgelehnt. Der Zugriff und die Nutzung solcher Webseiten erfolgen auf eigene Gefahr des Nutzers oder der Nutzerin.",
+    "copyright_title": "Urheberrechte",
+    "copyright_text": "Die Urheber- und alle anderen Rechte an Inhalten, Bildern, Fotos oder anderen Dateien auf dieser Website gehören ausschliesslich TW Projects. Für die Reproduktion jeglicher Elemente ist die schriftliche Zustimmung der Urheberrechtsträger im Voraus einzuholen.",
+    "terms_intro": "TW Services",
+    "terms_1_title": "1. Geltungsbereich",
+    "terms_1_text": "Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Dienstleistungen und Angebote von TW Services, insbesondere in den Bereichen:\n\nWebseitenerstellung\n\nKI-Sichtbarkeits- und Analyse-Services\n\nKI-gestützte Marketing- und Werbevideos\n\nAbweichende Vereinbarungen bedürfen der Schriftform.",
+    "terms_2_title": "2. Vertragsabschluss",
+    "terms_2_text": "Ein Vertrag kommt zustande durch:\n\nschriftliche Offerte und deren Annahme\n\nschriftliche oder elektronische Bestätigung\n\noder durch Beauftragung per E-Mail oder Formular\n\nTW Services behält sich das Recht vor, Anfragen ohne Angabe von Gründen abzulehnen.",
+    "terms_3_title": "3. Leistungsumfang",
+    "terms_3_text": "Der konkrete Leistungsumfang ergibt sich ausschliesslich aus der individuell vereinbarten Offerte oder Projektbeschreibung.\n\nTW Services schuldet keinen bestimmten wirtschaftlichen oder marketingbezogenen Erfolg, insbesondere keine garantierten:\n\nUmsätze\n\nReichweiten\n\nConversions\n\nRankings oder Sichtbarkeitswerte\n\nAlle Leistungen sind als Unterstützungs-, Analyse- oder Kreativdienstleistungen zu verstehen.",
+    "terms_4_title": "4. Mitwirkungspflicht des Kunden",
+    "terms_4_text": "Der Kunde verpflichtet sich, alle für die Leistungserbringung notwendigen Inhalte, Informationen und Freigaben rechtzeitig und korrekt zur Verfügung zu stellen.\n\nVerzögerungen oder Mehrkosten aufgrund fehlender oder fehlerhafter Mitwirkung gehen nicht zulasten von TW Services.",
+    "terms_5_title": "5. Einsatz von KI-Systemen",
+    "terms_5_text": "TW Services nutzt teilweise KI-gestützte Systeme und Tools. Der Kunde nimmt zur Kenntnis, dass:\n\nKI-Ergebnisse nicht fehlerfrei sein müssen\n\nInhalte automatisch generiert werden können\n\nkeine Garantie für rechtliche, technische oder wirtschaftliche Korrektheit besteht\n\nDie Verantwortung für die endgültige Nutzung, Veröffentlichung oder rechtliche Prüfung der Inhalte liegt ausschliesslich beim Kunden.",
+    "terms_6_title": "6. Haftung",
+    "terms_6_text": "TW Services haftet ausschliesslich für Schäden, die nachweislich durch vorsätzliches oder grob fahrlässiges Verhalten verursacht wurden.\n\nJegliche Haftung für:\n\nindirekte Schäden\n\nFolgeschäden\n\nentgangenen Gewinn\n\nDatenverluste\n\nReputationsschäden\n\nwird, soweit gesetzlich zulässig, ausgeschlossen.",
+    "terms_7_title": "7. Gewährleistung",
+    "terms_7_text": "TW Services erbringt Dienstleistungen nach bestem Wissen und Gewissen, übernimmt jedoch keine Gewährleistung für:\n\ntechnische Fehler Dritter (z. B. Hosting-Anbieter, Plattformen, KI-Tools)\n\nÄnderungen von Algorithmen oder Plattformrichtlinien\n\nInkompatibilitäten nach Projektabschluss",
+    "terms_8_title": "8. Preise und Zahlung",
+    "terms_8_text": "Alle Preise verstehen sich in Schweizer Franken (CHF), exkl. Mehrwertsteuer, sofern nicht anders angegeben.\n\nRechnungen sind innert 14 Tagen ohne Abzug zahlbar. Bei Zahlungsverzug behält sich TW Services vor, Leistungen auszusetzen.",
+    "terms_9_title": "9. Kündigung",
+    "terms_9_text": "Projektbezogene Leistungen sind grundsätzlich nicht kündbar, sobald die Arbeit begonnen hat.\n",
+    "terms_10_title": "10. Datenschutz",
+    "terms_10_text": "Es gilt die separate Datenschutzerklärung. TW Services behandelt personenbezogene Daten gemäss den anwendbaren Datenschutzgesetzen der Schweiz.",
+    "terms_11_title": "11. Gerichtsstand und anwendbares Recht",
+    "terms_11_text": "Es gilt ausschliesslich Schweizer Recht.\nGerichtsstand ist der Sitz von TW Projects GmbH.",
+    "terms_12_title": "12. Salvatorische Klausel",
+    "terms_12_text": "Sollten einzelne Bestimmungen dieser AGB unwirksam oder undurchführbar sein, bleibt die Wirksamkeit der übrigen Bestimmungen unberührt."
+  }
+
+}
