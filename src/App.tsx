@@ -14,6 +14,7 @@ import { ParallaxPlanets } from "./components//ui/ParallaxPlanets";
 import AllProjectsPage from "./components/AllProjectsPage";
 import { ImprintPage } from "./components/ImprintPage";
 import { TermsPage } from "./components/TermsPage";
+import { Analytics } from "@vercel/analytics/next"
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -66,6 +67,9 @@ function App() {
     <LanguageProvider>
       <Router>
         <ScrollToTop />
+
+        {/* Vercel Analytics Komponente*/}
+        <Analytics />
         
         {/* FIXIERTER HINTERGRUND: Das schwarze Universum */}
         <div className="fixed inset-0 z-0 bg-black pointer-events-none">
