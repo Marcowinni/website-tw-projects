@@ -14,7 +14,7 @@ import { ParallaxPlanets } from "./components//ui/ParallaxPlanets";
 import AllProjectsPage from "./components/AllProjectsPage";
 import { ImprintPage } from "./components/ImprintPage";
 import { TermsPage } from "./components/TermsPage";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/react";
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
