@@ -185,7 +185,7 @@ export const HeroScrollVideo: React.FC<HeroScrollVideoProps> = ({
 
       const target = targetSize === "fullscreen" 
         ? (orientation === "portrait" 
-            ? { width: "35vw", height: "95vh", borderRadius: 0 }
+            ? { width: "56.25vh", height: "100vh", borderRadius: 0 }
             : { width: "92vw", height: "92vh", borderRadius: 0 })
         : { width: `${targetSize.widthVw}vw`, height: `${targetSize.heightVh}vh`, borderRadius: targetSize.borderRadius ?? 0 };
 
@@ -256,7 +256,7 @@ export const HeroScrollVideo: React.FC<HeroScrollVideoProps> = ({
         .hsv-scroll { position: relative; }
         .hsv-sticky.is-sticky { position: sticky; top: 0; height: 100vh; display: grid; place-items: center; }
         .hsv-media { position: relative; width: var(--initial-size); height: var(--initial-size); border-radius: 20px; overflow: hidden; background: #000; margin: 0 auto; }
-        .hsv-media.portrait { max-width: 35vw; }
+        .hsv-media.portrait { width: 56.25vh; height: 100vh; }
         .hsv-overlay { position: absolute; inset: 0; background: var(--overlay-bg); padding: 40px; clip-path: inset(100% 0 0 0); display: flex; flex-direction: column; align-items: center; justify-content: center; }
         .hsv-overlay-content h3 { font-size: clamp(26px, 5vw, 50px); font-weight: 900; color: #fff; margin-bottom: 20px; }
       `}</style>

@@ -132,6 +132,8 @@
         "name": "PS-Schubiger",
         "slug": "psschubiger",
         "description": "Marketingvideo für PS Schubiger mit KI-Avatar, Storyboard und Retail-Fokus.",
+        "link": "/#contact",
+        "ctaLabel": "Kontakt aufnehmen",
         "video": "/demo_psschubiger.mp4",
         "tags": ["Marketing Video", "Retail"],
         "orientation": "portrait"
