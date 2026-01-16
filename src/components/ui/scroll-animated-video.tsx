@@ -17,6 +17,7 @@ export type HeroScrollVideoProps = {
   media?: VideoLike;
   poster?: string;
   mediaType?: "video" | "image";
+  orientation?: "landscape" | "portrait";
   muted?: boolean;
   loop?: boolean;
   playsInline?: boolean;
@@ -66,6 +67,7 @@ export const HeroScrollVideo: React.FC<HeroScrollVideoProps> = ({
   media,
   poster,
   mediaType = "video",
+  orientation = "landscape",
   muted = true,
   loop = true,
   playsInline = true,
@@ -182,7 +184,9 @@ export const HeroScrollVideo: React.FC<HeroScrollVideoProps> = ({
       });
 
       const target = targetSize === "fullscreen" 
-        ? { width: "92vw", height: "92vh", borderRadius: 0 }
+        ? (orientation === "portrait" 
+            ? { width: "35vw", height: "95vh", borderRadius: 0 }
+            : { width: "92vw", height: "92vh", borderRadius: 0 })
         : { width: `${targetSize.widthVw}vw`, height: `${targetSize.heightVh}vh`, borderRadius: targetSize.borderRadius ?? 0 };
 
       gsap.set(container, { width: initialBoxSize, height: initialBoxSize, borderRadius: 20 });
@@ -231,7 +235,7 @@ export const HeroScrollVideo: React.FC<HeroScrollVideoProps> = ({
 
       <div className="hsv-scroll" data-sticky-scroll style={{ height: `${scrollHeightVh}vh` }}>
         <div className={`hsv-sticky ${sticky ? "is-sticky" : ""}`}>
-          <div className="hsv-media" ref={containerRef}>
+          <div className={`hsv-media ${orientation === "portrait" ? "portrait" : ""}`} ref={containerRef}>
             {renderMedia()}
             <div className="hsv-overlay" ref={overlayRef}>
               <div className="hsv-caption" ref={overlayCaptionRef}>{overlay?.caption}</div>
@@ -251,7 +255,8 @@ export const HeroScrollVideo: React.FC<HeroScrollVideoProps> = ({
         .hsv-title { font-size: clamp(40px, 8vw, 96px); font-weight: 900; background: linear-gradient(90deg, #fff, #06b6d4); -webkit-background-clip: text; color: transparent; }
         .hsv-scroll { position: relative; }
         .hsv-sticky.is-sticky { position: sticky; top: 0; height: 100vh; display: grid; place-items: center; }
-        .hsv-media { position: relative; width: var(--initial-size); height: var(--initial-size); border-radius: 20px; overflow: hidden; background: #000; }
+        .hsv-media { position: relative; width: var(--initial-size); height: var(--initial-size); border-radius: 20px; overflow: hidden; background: #000; margin: 0 auto; }
+        .hsv-media.portrait { max-width: 35vw; }
         .hsv-overlay { position: absolute; inset: 0; background: var(--overlay-bg); padding: 40px; clip-path: inset(100% 0 0 0); display: flex; flex-direction: column; align-items: center; justify-content: center; }
         .hsv-overlay-content h3 { font-size: clamp(26px, 5vw, 50px); font-weight: 900; color: #fff; margin-bottom: 20px; }
       `}</style>

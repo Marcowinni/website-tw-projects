@@ -54,14 +54,14 @@
   },
   "ai": {
     "title": "KI Sichtbarkeits Services",
-    "subtitle": "Sichtbarkeit & Empfehlungen in ChatGPT, Google AI & Co.",
+    "subtitle": "Mehr Sichtbarkeit und mehr Empfehlungen in ChatGPT, Google AI & Co.",
     "items": [
       {
         "id": "ai-audit",
         "title": "KI-Visibility Audit",
         "price": "800 - 1'000 CHF",
         "delivery": "Analyse & Strategie",
-        "features": ["Detaillierte Analyse", "Konkrete Todo Liste (ca. 1 Seite)", "Sichtbarkeits-Check"],
+        "features": ["Detaillierte Analyse Ihrer aktuellen Situation", "Konkrete Todo Liste (ca. 1 Seite)", "Check: Wie gut wird Ihr Unternehmen von KI-Systemen gefunden?"],
         "cta": "Offerte erhalten",
         "ctaLink": "/#contact"
       },
@@ -69,8 +69,8 @@
         "id": "ai-setup",
         "title": "KI-Visibility Setup",
         "price": "2'000 - 4'500 CHF",
-        "delivery": "Full Implementation",
-        "features": ["KI-optimierte Datenstruktur", "Firma für KI verständlich machen", "Empfehlbarkeit in LLMs steigern"],
+        "delivery": "Komplette Umsetzung",
+        "features": ["KI-optimierte Struktur Ihrer Daten und Inhalte", "Wir machen Ihre Firma für KI verständlich und sichtbar für KI-Systeme", "Wir erhöhen die Chance, dass Ihr Unternehmen von KI empfohlen wird."],
         "cta": "Offerte erhalten",
         "ctaLink": "#contact"
       }
@@ -78,16 +78,19 @@
   },
   "video": {
       "title": "KI Marketing Videos",
-      "subtitle": "Professioneller Video-Content für Social Media & Ads – ohne teure Drehtage.",
+      "subtitle": "KI-generierte Werbe- und Informations-Videos .",
       "items": [
         {
           "id": "video-social",
           "title": "Social Media Paket",
           "price": "1'500 - 2'500 CHF",
-          "delivery": "Paket: 1 Marketing Video",
+          "delivery": "Paket: 1 Werbe- oder Informations-Video",
           "isBest": true,
           "features": ["Realistische KI-Avatare", "Skript & Storyboard inklusive", "Perfekt für Social Media Ads"],
-          "cta": "Offerte erhalten",
+          "cta1": "Offerte erhalten",
+          "cta1Link": "/#contact",
+          "cta2": "Referenzvideo ansehen",
+          "cta2Link": "/projects#psschubiger",
           "ctaLink": "/#contact"
         }
       ]
@@ -124,6 +127,14 @@
         "link": "https://www.memora-moments.ch",
         "video": "/demo_memora_moments.mp4",
         "tags": ["Web Design", "GEO"]
+      },
+      {
+        "name": "PS-Schubiger",
+        "slug": "psschubiger",
+        "description": "Marketingvideo für PS Schubiger mit KI-Avatar, Storyboard und Retail-Fokus.",
+        "video": "/demo_psschubiger.mp4",
+        "tags": ["Marketing Video", "Retail"],
+        "orientation": "portrait"
       }
     ]
   },

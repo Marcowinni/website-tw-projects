@@ -6,9 +6,9 @@ export function FooterSection() {
   const { t } = useLanguage();
 
   return (
-    <footer className="relative text-slate-400 font-sans bg-transparent py-24 border-t border-white/5">
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="grid md:grid-cols-4 gap-16 mb-20">
+    <footer className="relative text-slate-400 font-sans bg-transparent py-16 sm:py-20 md:py-24 border-t border-white/5">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        <div className="grid md:grid-cols-4 gap-10 sm:gap-16 mb-16 md:mb-20">
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center gap-3 mb-8">
                <img src="/logo.png" className="h-10 w-auto" alt="Logo" />

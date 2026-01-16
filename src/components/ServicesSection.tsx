@@ -87,7 +87,13 @@ export function ServicesSection() {
   ) => (
     <div className={containerClassName}>
       {items.map((service: any, index: number) => {
-        const isExternal = service.ctaLink.startsWith("http");
+        const primaryLabel = service.cta || service.cta1;
+        const primaryLink = service.ctaLink || service.cta1Link;
+        const secondaryLabel = service.cta2;
+        const secondaryLink = service.cta2Link;
+
+        const isExternal = (link?: string) => !!link && link.startsWith("http");
+
         return (
           // Wir übergeben den Index für das versetzte Schweben
           <SpaceCard key={service.id} index={index} className="h-full">
@@ -117,19 +123,37 @@ export function ServicesSection() {
                 </ul>
               </div>
 
-              <div className="pt-4 mt-auto">
-                {isExternal ? (
-                  <a href={service.ctaLink} target="_blank" rel="noopener noreferrer" className="block w-full">
-                    <Button className="w-full bg-white/5 hover:bg-cyan-500/20 text-white border border-white/10 hover:border-cyan-500/50 text-[13px] py-6 rounded-2xl font-black uppercase tracking-widest transition-all active:scale-95 flex items-center justify-center gap-3 shadow-lg hover:shadow-cyan-500/20">
-                      {service.cta} <ArrowRight className="w-4 h-4" />
-                    </Button>
-                  </a>
-                ) : (
-                  <Link to={service.ctaLink} className="block w-full">
-                    <Button className="w-full bg-white/5 hover:bg-cyan-500/20 text-white border border-white/10 hover:border-cyan-500/50 text-[13px] py-6 rounded-2xl font-black uppercase tracking-widest transition-all active:scale-95 flex items-center justify-center gap-3 shadow-lg hover:shadow-cyan-500/20">
-                      {service.cta} <ArrowRight className="w-4 h-4" />
-                    </Button>
-                  </Link>
+              <div className="pt-4 mt-auto flex flex-col gap-3">
+                {primaryLabel && primaryLink && (
+                  isExternal(primaryLink) ? (
+                    <a href={primaryLink} target="_blank" rel="noopener noreferrer" className="block w-full">
+                      <Button className="w-full bg-white/5 hover:bg-cyan-500/20 text-white border border-white/10 hover:border-cyan-500/50 text-[13px] py-6 rounded-2xl font-black uppercase tracking-widest transition-all active:scale-95 flex items-center justify-center gap-3 shadow-lg hover:shadow-cyan-500/20">
+                        {primaryLabel} <ArrowRight className="w-4 h-4" />
+                      </Button>
+                    </a>
+                  ) : (
+                    <Link to={primaryLink} className="block w-full">
+                      <Button className="w-full bg-white/5 hover:bg-cyan-500/20 text-white border border-white/10 hover:border-cyan-500/50 text-[13px] py-6 rounded-2xl font-black uppercase tracking-widest transition-all active:scale-95 flex items-center justify-center gap-3 shadow-lg hover:shadow-cyan-500/20">
+                        {primaryLabel} <ArrowRight className="w-4 h-4" />
+                      </Button>
+                    </Link>
+                  )
+                )}
+
+                {secondaryLabel && secondaryLink && (
+                  isExternal(secondaryLink) ? (
+                    <a href={secondaryLink} target="_blank" rel="noopener noreferrer" className="block w-full">
+                      <Button variant="outline" className="w-full bg-white/5 hover:bg-white/10 text-white border border-white/20 hover:border-cyan-500/50 text-[12px] py-5 rounded-2xl font-black uppercase tracking-widest transition-all active:scale-95 flex items-center justify-center gap-3 shadow-lg hover:shadow-cyan-500/10">
+                        {secondaryLabel} <ArrowRight className="w-4 h-4" />
+                      </Button>
+                    </a>
+                  ) : (
+                    <Link to={secondaryLink} className="block w-full">
+                      <Button variant="outline" className="w-full bg-white/5 hover:bg-white/10 text-white border border-white/20 hover:border-cyan-500/50 text-[12px] py-5 rounded-2xl font-black uppercase tracking-widest transition-all active:scale-95 flex items-center justify-center gap-3 shadow-lg hover:shadow-cyan-500/10">
+                        {secondaryLabel} <ArrowRight className="w-4 h-4" />
+                      </Button>
+                    </Link>
+                  )
                 )}
               </div>
             </div>
@@ -142,7 +166,7 @@ export function ServicesSection() {
   if (!t.services) return null;
 
   return (
-    <section id="services" className="w-full bg-transparent py-40 px-6 relative border-t border-white/5">
+    <section id="services" className="w-full bg-transparent py-24 sm:py-32 md:py-40 px-4 sm:px-6 relative border-t border-white/5">
       <div className="container mx-auto">
         <span className="text-cyan-500 font-black text-xs uppercase tracking-[0.4em] mb-16 block text-center">
           {t.services.blue_title}
@@ -156,10 +180,10 @@ export function ServicesSection() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            <h2 className="text-5xl md:text-7xl font-black text-white tracking-tighter leading-none mb-6">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter leading-none mb-6">
               {t.services.web.title}
             </h2>
-            <p className="text-lg text-slate-400 max-w-2xl mx-auto font-light italic">
+            <p className="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto font-light italic">
               {t.services.web.subtitle}
             </p>
           </motion.div>
@@ -168,17 +192,17 @@ export function ServicesSection() {
         {renderCards(t.services.web.items)}
 
         {/* AI SERVICES */}
-        <div className="text-center mt-48 mb-20">
+        <div className="text-center mt-24 sm:mt-36 md:mt-48 mb-20">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            <h2 className="text-5xl md:text-7xl font-black text-white tracking-tighter leading-none mb-6">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter leading-none mb-6">
               {t.services.ai.title}
             </h2>
-            <p className="text-lg text-slate-400 max-w-2xl mx-auto font-light italic">
+            <p className="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto font-light italic">
               {t.services.ai.subtitle}
             </p>
           </motion.div>
@@ -192,17 +216,17 @@ export function ServicesSection() {
         {/* VIDEO SERVICES */}
         {t.services.video && (
           <>
-            <div className="text-center mt-48 mb-20">
+            <div className="text-center mt-24 sm:mt-36 md:mt-48 mb-20">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 viewport={{ once: true }}
               >
-                <h2 className="text-5xl md:text-7xl font-black text-white tracking-tighter leading-none mb-6">
+                <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter leading-none mb-6">
                   {t.services.video.title}
                 </h2>
-                <p className="text-lg text-slate-400 max-w-2xl mx-auto font-light italic">
+                <p className="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto font-light italic">
                   {t.services.video.subtitle}
                 </p>
               </motion.div>

@@ -131,7 +131,7 @@ export function AboutSection() {
   const { t } = useLanguage();
 
   return (
-    <section id="about" className="relative w-full bg-transparent py-40 border-t border-white/5 overflow-hidden">
+    <section id="about" className="relative w-full bg-transparent py-24 sm:py-32 md:py-40 border-t border-white/5 overflow-hidden">
       
       {/* Hintergrund-Deko: Dezenter Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-cyan-500/5 blur-[120px] rounded-full pointer-events-none" />
@@ -147,16 +147,16 @@ export function AboutSection() {
           <span className="text-cyan-500 font-black text-xs uppercase tracking-[0.4em] mb-4 block">
             {t.about.title}
           </span>
-          <h2 className="text-5xl md:text-7xl font-black text-white tracking-tighter mb-8">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter mb-6 md:mb-8">
             {t.about.mission_title}
           </h2>
-          <p className="text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto italic mb-32 font-light leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto italic mb-20 sm:mb-28 md:mb-32 font-light leading-relaxed">
             "{t.about.mission_text}"
           </p>
         </motion.div>
 
         {/* TEAM GRID */}
-        <div className="grid md:grid-cols-2 gap-20 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-12 sm:gap-16 md:gap-20 max-w-4xl mx-auto">
           
           {/* MARCO */}
           <motion.div

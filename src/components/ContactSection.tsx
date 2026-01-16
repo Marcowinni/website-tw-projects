@@ -6,7 +6,6 @@ import { MouseEvent, useRef } from "react";
 
 // --- MAGNETIC CARD COMPONENT ---
 function MagneticContactCard({ children, className = "", href = "" }: { children: React.ReactNode; className?: string; href?: string }) {
-  // FIX: Ref als 'any' typisieren, damit es sowohl für div als auch für a (Link) akzeptiert wird
   const ref = useRef<any>(null);
 
   const x = useMotionValue(0);
@@ -102,7 +101,7 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="relative w-full bg-transparent py-40 px-6 overflow-hidden border-t border-white/5">
+    <section id="contact" className="relative w-full bg-transparent py-24 sm:py-32 md:py-40 px-4 sm:px-6 overflow-hidden border-t border-white/5">
       <div className="container mx-auto relative z-10">
 
         <span className="text-cyan-500 font-black text-xs uppercase tracking-[0.4em] mb-16 block text-center">
@@ -110,18 +109,18 @@ export function ContactSection() {
           </span>
         
         <div className="text-center mb-20 max-w-3xl mx-auto space-y-6">
-          <h2 className="text-4xl md:text-7xl font-black text-white tracking-tighter">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter">
             <VerticalCutReveal containerClassName="justify-center text-white pb-2">
               {t.kontakt.title}
             </VerticalCutReveal>
           </h2>
-          <p className="text-xl text-slate-400 font-medium">
+          <p className="text-lg sm:text-xl text-slate-400 font-medium">
             {t.kontakt.subtitle}
           </p>
         </div>
 
         {/* CARDS GRID */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto items-stretch">
           
           {/* WHATSAPP CARD */}
           <MagneticContactCard href={contactInfo.whatsappLink}>
@@ -134,7 +133,7 @@ export function ContactSection() {
             
             {/* QR Code Container mit extra Tiefe */}
             <div className="bg-white p-3 rounded-3xl mb-6 shadow-2xl transform transition-transform group-hover:scale-105">
-              <img src="/whatsapp-qr.png" alt="WhatsApp QR" className="w-32 h-32 object-contain" />
+              <img src="/whatsapp-qr.png" alt="WhatsApp QR" className="w-24 sm:w-32 h-24 sm:h-32 object-contain mx-auto" />
             </div>
             
             <span className="text-slate-400 group-hover:text-white text-sm font-bold uppercase tracking-widest flex items-center gap-2 transition-colors">
@@ -165,7 +164,7 @@ export function ContactSection() {
             <h3 className="text-white font-bold uppercase tracking-widest text-xs mb-4 group-hover:text-blue-400 transition-colors">
               {t.kontakt.phone_label}
             </h3>
-            <span className="text-2xl md:text-3xl font-black text-white group-hover:text-blue-300 transition-colors tracking-tighter">
+            <span className="text-xl sm:text-2xl md:text-3xl font-black text-white group-hover:text-blue-300 transition-colors tracking-tighter">
               {contactInfo.phone}
             </span>
           </MagneticContactCard>
