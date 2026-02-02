@@ -9,9 +9,9 @@ export function ReferenceSection() {
 
   // Mapping der Logos zu den IDs in der AllProjectsPage
   const logos = [
-    { src: "/references/logo_digitalsens.png", alt: "DigitalSens", id: "digitalsens" },
-    { src: "/references/logo_memora.png", alt: "Memora Moments", id: "memora-moments" },
-    { src: "/references/logo_psschubiger.png", alt: "P.S. Schubiger", id: "psschubiger" },
+    { src: "/references/logo_digitalsens.png", alt: "DigitalSens", id: "digitalsens", category: "web" },
+    { src: "/references/logo_memora.png", alt: "Memora Moments", id: "memora-moments", category: "web" },
+    { src: "/references/logo_psschubiger.png", alt: "P.S. Schubiger", id: "psschubiger", category: "video" },
   ];
 
   return (
@@ -30,13 +30,13 @@ export function ReferenceSection() {
               // Jeder Logo-Eintrag linkt jetzt direkt zum Projekt-Anker
               <Link 
                 key={i} 
-                to={`/projects#${logo.id}`} 
+                to={`/projects?category=${logo.category}#${logo.id}`} 
                 className="mx-12 block transition-all hover:scale-110 active:scale-95 group"
               >
                 <img 
                   src={logo.src} 
                   alt={logo.alt} 
-                  className={`h-16 sm:h-20 md:h-24 lg:h-32 w-auto grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 drop-shadow-[0_0_20px_rgba(6,182,212,0)] group-hover:drop-shadow-[0_0_20px_rgba(6,182,212,0.3)] ${logo.id === 'psschubiger' ? 'scale-[2.5]' : ''}`}
+                  className="h-16 sm:h-20 md:h-24 lg:h-32 w-auto grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 drop-shadow-[0_0_20px_rgba(6,182,212,0)] group-hover:drop-shadow-[0_0_20px_rgba(6,182,212,0.3)]"
                 />
               </Link>
             ))}

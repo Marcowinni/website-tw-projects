@@ -14,6 +14,7 @@ import { ParallaxPlanets } from "./components//ui/ParallaxPlanets";
 import AllProjectsPage from "./components/AllProjectsPage";
 import { ImprintPage } from "./components/ImprintPage";
 import { TermsPage } from "./components/TermsPage";
+import { ServiceDetailPage } from "./components/ServiceDetailPage";
 import { Analytics } from "@vercel/analytics/react";
 
 function ScrollToTop() {
@@ -92,6 +93,7 @@ function App() {
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/projects" element={<AllProjectsPage />} />
+            <Route path="/services/:id" element={<ServiceDetailPage />} />
             <Route path="/about/:id" element={<ProfileDetailPage />} />
             <Route path="/impressum" element={<ImprintPage />} />
             <Route path="/agb" element={<TermsPage />} />

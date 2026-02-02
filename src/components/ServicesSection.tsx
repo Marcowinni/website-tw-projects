@@ -2,7 +2,7 @@ import { motion, useMotionTemplate, useMotionValue, useScroll, useTransform } fr
 import { useLanguage } from "../context/LanguageContext";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import { Button } from "./ui/button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { MouseEvent, useRef } from "react";
 
 // --- SPACE CARD: Kombiniert 3D-Reveal, Floating und Spotlight ---
@@ -79,6 +79,7 @@ function SpaceCard({ children, className = "", index = 0 }: { children: React.Re
 
 export function ServicesSection() {
   const { t } = useLanguage();
+  const navigate = useNavigate();
   
   // Render-Funktion
   const renderCards = (
@@ -87,37 +88,52 @@ export function ServicesSection() {
   ) => (
     <div className={containerClassName}>
       {items.map((service: any, index: number) => {
-        const primaryLabel = service.cta || service.cta1;
-        const primaryLink = service.ctaLink || service.cta1Link;
-        const secondaryLabel = service.cta2;
-        const secondaryLink = service.cta2Link;
+        const primaryLabel = service.ctaPrimary;
+        const primaryLink = service.ctaPrimaryLink;
+        const secondaryLabel = service.ctaSecondary;
+        const secondaryLink = service.ctaSecondaryLink;
 
         const isExternal = (link?: string) => !!link && link.startsWith("http");
 
         return (
           // Wir übergeben den Index für das versetzte Schweben
           <SpaceCard key={service.id} index={index} className="h-full">
-            <div className="p-6 sm:p-8 xl:p-10 flex flex-col h-full">
+            <div
+              className="p-6 sm:p-8 xl:p-10 flex flex-col h-full cursor-pointer"
+              role="button"
+              tabIndex={0}
+              onClick={() => service.detailLink && navigate(service.detailLink)}
+              onKeyDown={(e) => {
+                if ((e.key === "Enter" || e.key === " ") && service.detailLink) {
+                  e.preventDefault();
+                  navigate(service.detailLink);
+                }
+              }}
+            >
               
               {/* BEST BADGE (Optional, falls gewünscht - aktuell ausgeblendet im Design) */}
               {/* {service.isBest && (...)} */}
 
               <div className="text-center space-y-4 mb-10">
-                <h3 className="text-4xl font-bold text-slate-400 uppercase tracking-widest min-h-[3rem] flex items-center justify-center group-hover:text-white transition-colors duration-500 group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">
+                <h3 className="w-full text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-slate-400 uppercase tracking-[0.2em] min-h-[3rem] flex flex-wrap items-center justify-center text-center whitespace-normal break-words leading-tight group-hover:text-white transition-colors duration-500 group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">
                   {service.title}
                 </h3>
                 
                 <p className="text-cyan-500 text-[10px] sm:text-xs font-black uppercase tracking-[0.2em]">
-                  {service.delivery}
+                  {service.subtitle}
                 </p>
               </div>
 
-              <div className="pt-8 border-t border-white/10 mb-10 flex-grow">
+              <p className="text-slate-300 text-sm sm:text-base font-medium text-center mb-8 leading-relaxed">
+                {service.benefit}
+              </p>
+
+              <div className="pt-6 border-t border-white/10 mb-10 flex-grow">
                 <ul className="space-y-4">
-                  {service.features && service.features.map((feature: string, i: number) => (
+                  {service.bullets && service.bullets.map((bullet: string, i: number) => (
                     <li key={i} className="flex items-start gap-3 text-[12px] font-bold uppercase tracking-wider text-slate-300 leading-tight group-hover:text-slate-100 transition-colors">
                       <CheckCircle2 className="w-4 h-4 text-cyan-500 shrink-0 mt-0.5" /> 
-                      <span>{feature}</span>
+                      <span>{bullet}</span>
                     </li>
                   ))}
                 </ul>
@@ -126,13 +142,13 @@ export function ServicesSection() {
               <div className="pt-4 mt-auto flex flex-col gap-3">
                 {primaryLabel && primaryLink && (
                   isExternal(primaryLink) ? (
-                    <a href={primaryLink} target="_blank" rel="noopener noreferrer" className="block w-full">
+                    <a href={primaryLink} target="_blank" rel="noopener noreferrer" className="block w-full" onClick={(e) => e.stopPropagation()}>
                       <Button className="w-full bg-white/5 hover:bg-cyan-500/20 text-white border border-white/10 hover:border-cyan-500/50 text-[13px] py-6 rounded-2xl font-black uppercase tracking-widest transition-all active:scale-95 flex items-center justify-center gap-3 shadow-lg hover:shadow-cyan-500/20">
                         {primaryLabel} <ArrowRight className="w-4 h-4" />
                       </Button>
                     </a>
                   ) : (
-                    <Link to={primaryLink} className="block w-full">
+                    <Link to={primaryLink} className="block w-full" onClick={(e) => e.stopPropagation()}>
                       <Button className="w-full bg-white/5 hover:bg-cyan-500/20 text-white border border-white/10 hover:border-cyan-500/50 text-[13px] py-6 rounded-2xl font-black uppercase tracking-widest transition-all active:scale-95 flex items-center justify-center gap-3 shadow-lg hover:shadow-cyan-500/20">
                         {primaryLabel} <ArrowRight className="w-4 h-4" />
                       </Button>
@@ -142,13 +158,13 @@ export function ServicesSection() {
 
                 {secondaryLabel && secondaryLink && (
                   isExternal(secondaryLink) ? (
-                    <a href={secondaryLink} target="_blank" rel="noopener noreferrer" className="block w-full">
+                    <a href={secondaryLink} target="_blank" rel="noopener noreferrer" className="block w-full" onClick={(e) => e.stopPropagation()}>
                       <Button variant="outline" className="w-full bg-white/5 hover:bg-white/10 text-white border border-white/20 hover:border-cyan-500/50 text-[12px] py-5 rounded-2xl font-black uppercase tracking-widest transition-all active:scale-95 flex items-center justify-center gap-3 shadow-lg hover:shadow-cyan-500/10">
                         {secondaryLabel} <ArrowRight className="w-4 h-4" />
                       </Button>
                     </a>
                   ) : (
-                    <Link to={secondaryLink} className="block w-full">
+                    <Link to={secondaryLink} className="block w-full" onClick={(e) => e.stopPropagation()}>
                       <Button variant="outline" className="w-full bg-white/5 hover:bg-white/10 text-white border border-white/20 hover:border-cyan-500/50 text-[12px] py-5 rounded-2xl font-black uppercase tracking-widest transition-all active:scale-95 flex items-center justify-center gap-3 shadow-lg hover:shadow-cyan-500/10">
                         {secondaryLabel} <ArrowRight className="w-4 h-4" />
                       </Button>
@@ -163,7 +179,7 @@ export function ServicesSection() {
     </div>
   );
 
-  if (!t.services) return null;
+  if (!t.services?.overview) return null;
 
   return (
     <section id="services" className="w-full bg-transparent py-24 sm:py-32 md:py-40 px-4 sm:px-6 relative border-t border-white/5">
@@ -172,7 +188,6 @@ export function ServicesSection() {
           {t.services.blue_title}
         </span>
         
-        {/* WEBSITES */}
         <div className="text-center mb-20">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -181,64 +196,15 @@ export function ServicesSection() {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter leading-none mb-6">
-              {t.services.web.title}
+              {t.services.title}
             </h2>
             <p className="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto font-light italic">
-              {t.services.web.subtitle}
+              {t.services.subtitle}
             </p>
           </motion.div>
         </div>
         
-        {renderCards(t.services.web.items)}
-
-        {/* AI SERVICES */}
-        <div className="text-center mt-24 sm:mt-36 md:mt-48 mb-20">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter leading-none mb-6">
-              {t.services.ai.title}
-            </h2>
-            <p className="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto font-light italic">
-              {t.services.ai.subtitle}
-            </p>
-          </motion.div>
-        </div>
-        
-        {renderCards(
-          t.services.ai.items, 
-          "flex flex-wrap justify-center gap-6 xl:gap-8 max-w-7xl mx-auto"
-        )}
-
-        {/* VIDEO SERVICES */}
-        {t.services.video && (
-          <>
-            <div className="text-center mt-24 sm:mt-36 md:mt-48 mb-20">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                viewport={{ once: true }}
-              >
-                <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter leading-none mb-6">
-                  {t.services.video.title}
-                </h2>
-                <p className="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto font-light italic">
-                  {t.services.video.subtitle}
-                </p>
-              </motion.div>
-            </div>
-            
-            {renderCards(
-              t.services.video.items, 
-              "flex flex-wrap justify-center gap-6 xl:gap-8 max-w-7xl mx-auto"
-            )}
-          </>
-        )}
-
+        {renderCards(t.services.overview.items)}
       </div>
     </section>
   );

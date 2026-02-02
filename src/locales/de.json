@@ -10,90 +10,171 @@
     "cta": "Erstberatung vereinbaren"
   },
   "hero": {
-    "title_main": "„Wir erschaffen Webseiten,",
-    "title_highlight": "die man nicht vergisst.“",
-    "subtitle_main": "Massgeschneiderte Nutzererlebnisse & ästhetische Perfektion",
-    "subtitle_sub": "für Marken, die den",
+    "title_main": "„Wenn Ihr Angebot nicht verstanden wird,",
+    "title_highlight": "verkauft es nicht.“",
+    "subtitle_main": "Wir strukturieren Ihr Angebot",
+    "subtitle_sub": "wie es verkauft wird.",
     "subtitle_highlight": "Standard setzen"
   },
   "services": {
-  "blue_title": "Unsere Services",
-  "web": {
-    "title": "Unsere Website-Pakete",
-    "subtitle": "Professionelle Webauftritte für jedes Bedürfnis – transparent und leistungsstark.",
-    "items": [
-      {
-        "id": "web-landing",
-        "title": "Landing Page",
-        "price": "600 - 800 CHF",
-        "delivery": "Live in 1-3 Tagen",
-        "features": ["One Pager / Landing Page", "Content Erstellung", "Basic SEO"],
-        "cta": "Offerte erhalten",
-        "ctaLink": "https://docs.google.com/forms/d/e/1FAIpQLSe4dG3qWH5X0QtzPMI0v-XBltnGFsEsMUUWw0u_lvEAJyYgag/viewform?usp=dialog"
-      },
-      {
-        "id": "web-business",
-        "title": "Business Webseite",
-        "price": "2'000 - 2'500 CHF",
-        "delivery": "Live in 3-5 Tagen",
-        "isBest": true,
-        "features": ["Unlimitierte Unterseiten", "CMS / Datenbank", "Ausführlicheres SEO"],
-        "cta": "Offerte erhalten",
-        "ctaLink": "https://docs.google.com/forms/d/e/1FAIpQLSe4dG3qWH5X0QtzPMI0v-XBltnGFsEsMUUWw0u_lvEAJyYgag/viewform?usp=dialog"
-      },
-      {
-        "id": "web-shop",
-        "title": "Online-Shop",
-        "price": "3'700 - 4'200 CHF",
-        "delivery": "Live in 10-14 Tagen",
-        "features": ["Unlimitierte Produkte", "Eigene Admin APP", "Produktfotos", "Produktimport"],
-        "cta": "Offerte erhalten",
-        "ctaLink": "https://docs.google.com/forms/d/e/1FAIpQLSe4dG3qWH5X0QtzPMI0v-XBltnGFsEsMUUWw0u_lvEAJyYgag/viewform?usp=dialog"
-      }
-    ]
-  },
-  "ai": {
-    "title": "KI Sichtbarkeits Services",
-    "subtitle": "Mehr Sichtbarkeit und mehr Empfehlungen in ChatGPT, Google AI & Co.",
-    "items": [
-      {
-        "id": "ai-audit",
-        "title": "KI-Visibility Audit",
-        "price": "800 - 1'000 CHF",
-        "delivery": "Analyse & Strategie",
-        "features": ["Detaillierte Analyse Ihrer aktuellen Situation", "Konkrete Todo Liste (ca. 1 Seite)", "Check: Wie gut wird Ihr Unternehmen von KI-Systemen gefunden?"],
-        "cta": "Offerte erhalten",
-        "ctaLink": "/#contact"
-      },
-      {
-        "id": "ai-setup",
-        "title": "KI-Visibility Setup",
-        "price": "2'000 - 4'500 CHF",
-        "delivery": "Komplette Umsetzung",
-        "features": ["KI-optimierte Struktur Ihrer Daten und Inhalte", "Wir machen Ihre Firma für KI verständlich und sichtbar für KI-Systeme", "Wir erhöhen die Chance, dass Ihr Unternehmen von KI empfohlen wird."],
-        "cta": "Offerte erhalten",
-        "ctaLink": "#contact"
-      }
-    ]
-  },
-  "video": {
-      "title": "KI Marketing Videos",
-      "subtitle": "KI-generierte Werbe- und Informations-Videos .",
+    "blue_title": "Unsere Services",
+    "title": "Drei Services – ein Ziel: mehr qualifizierte Anfragen",
+    "subtitle": "Wir helfen Unternehmen, Angebote klar zu kommunizieren, von KI-Systemen gefunden zu werden\nund Besucher gezielt zur Anfrage zu führen.",
+    "overview": {
       "items": [
         {
-          "id": "video-social",
-          "title": "Social Media Paket",
-          "price": "1'500 - 2'500 CHF",
-          "delivery": "Paket: 1 Werbe- oder Informations-Video",
-          "isBest": true,
-          "features": ["Realistische KI-Avatare", "Skript & Storyboard inklusive", "Perfekt für Social Media Ads"],
-          "cta1": "Offerte erhalten",
-          "cta1Link": "/#contact",
-          "cta2": "Referenzvideo ansehen",
-          "cta2Link": "/projects#psschubiger",
-          "ctaLink": "/#contact"
+          "id": "ki-videos",
+          "title": "KI Marketing Videos",
+          "subtitle": "Werbevideos für neue Überbauungen – verständlich, visuell, anfrageorientiert",
+          "benefit": "Interessenten verstehen das Bauprojekt in unter 60 Sekunden\nund wissen sofort, ob und wie sie anfragen können.",
+          "bullets": [
+            "Fokus auf Überbauungen & Neubauprojekte",
+            "Klare Nutzenkommunikation statt Imagefilm",
+            "Video inkl. konkreter Vermarktungsempfehlung"
+          ],
+          "ctaPrimary": "OFFERTE ERHALTEN",
+          "ctaPrimaryLink": "/#contact",
+          "ctaSecondary": "REFERENZEN ANSEHEN",
+          "ctaSecondaryLink": "/projects?category=video",
+          "detailLink": "/services/ki-videos"
+        },
+        {
+          "id": "webseiten",
+          "title": "Webseiten",
+          "subtitle": "Websites, die Anfragen auslösen",
+          "benefit": "Ihre Website wird in 10 Sekunden verstanden und führt Besucher gezielt zur Anfrage.",
+          "bullets": [
+            "Klare Positionierung statt Design-Show",
+            "Struktur, die Vertrauen aufbaut",
+            "Schnell live, sauber messbar"
+          ],
+          "ctaPrimary": "Offerte erhalten",
+          "ctaPrimaryLink": "/#contact",
+          "ctaSecondary": "Referenzen ansehen",
+          "ctaSecondaryLink": "/projects?category=web",
+          "detailLink": "/services/webseiten"
+        },
+        {
+          "id": "ki-sichtbarkeit",
+          "title": "AI Visibility",
+          "subtitle": "Empfehlbar in ChatGPT, Google AI & Co.",
+          "benefit": "Ihre Inhalte werden von KI-Systemen korrekt verstanden,\neingeordnet und häufiger empfohlen.",
+          "bullets": [
+            "Struktur, die KI eindeutig interpretiert",
+            "Inhalte, die konkrete Antworten liefern",
+            "Klare Schritte statt Vermutungen"
+          ],
+          "ctaPrimary": "OFFERTE ERHALTEN",
+          "ctaPrimaryLink": "/#contact",
+          "ctaSecondary": "REFERENZEN ANSEHEN",
+          "ctaSecondaryLink": "/projects?category=ai",
+          "detailLink": "/services/ki-sichtbarkeit"
         }
       ]
+    }
+  },
+  "servicesDetail": {
+    "ki-videos": {
+      "title": "KI Marketing Videos",
+      "subtitle": "Erklärvideo + Marketing-Ausrichtung –\ndamit aus Aufmerksamkeit konkrete Anfragen werden.",
+      "benefitTitle": "Ihr Ergebnis",
+      "benefitText": "Interessenten verstehen Ihr Angebot in Sekunden\nund wissen genau, ob – und wie – sie anfragen sollen.",
+      "valueTitle": "Mehrwert",
+      "valueText": "Wir erstellen keine reinen Erklärvideos.\nWir entwickeln eine klare Kernbotschaft und setzen sie als Video um,\ndas gezielt dort wirkt, wo Ihre Zielgruppe entscheidet.\n\nDas Ergebnis ist nicht nur Aufmerksamkeit,\nsondern qualifizierte Reaktionen.",
+      "positioningTitle": "Unsere Spezialisierung",
+      "positioningText": "Wir sind spezialisiert auf erklärungsbedürftige Angebote,\nbei denen klassische Videos zu wenig Wirkung haben.\n\nUnser Fokus liegt auf klarer Struktur,\nverständlicher Botschaft\nund einer eindeutigen Handlungsaufforderung.",
+      "whyTitle": "Warum wir hier Spezialist sind",
+      "whyBullets": [
+        "ERKLÄRVIDEO UND MARKETING-LOGIK AUS EINER HAND",
+        "FOKUS AUF REAKTIONEN UND ANFRAGEN STATT ÄSTHETIK",
+        "ERPROBTE STRUKTUR: PROBLEM → LÖSUNG → BEWEIS → CTA"
+      ],
+      "includesTitle": "Sie erhalten",
+      "includesBullets": [
+        "KLARES KONZEPT MIT EINER ZENTRALEN KERNBOTSCHAFT",
+        "SKRIPT UND STORYBOARD FÜR EIN SOFORT VERSTÄNDLICHES VIDEO",
+        "KI-AVATAR OPTIONAL, FALLS SINNVOLL",
+        "KONKRETE VERMARKTUNGSEMPFEHLUNG\n(KANAL, EINSTIEG, CALL-TO-ACTION)"
+      ],
+      "processTitle": "So läuft es ab",
+      "processSteps": [
+        "KURZ-INTERVIEW ZU ANGEBOT UND ZIELKUNDEN",
+        "AUSARBEITUNG DER BOTSCHAFT UND STORYLINE",
+        "PRODUKTION UND ABSTIMMUNG",
+        "AUSLIEFERUNG INKL. MARKETING-FAHRPLAN"
+      ],
+      "ctaPrimary": "Offerte erhalten",
+      "ctaPrimaryLink": "/#contact",
+      "ctaSecondary": "Referenzen ansehen",
+      "ctaSecondaryLink": "/projects?category=video"
+    },
+    "webseiten": {
+      "title": "Webseiten",
+      "subtitle": "Websites, die verstanden werden –\nund gezielt Anfragen auslösen.",
+      "benefitTitle": "Ihr Ergebnis",
+      "benefitText": "Besucher verstehen in unter 10 Sekunden,\nwas Sie anbieten und warum sie bei Ihnen anfragen sollen.",
+      "valueTitle": "Mehrwert",
+      "valueText": "Wir bauen keine Design-Spielereien.\nWir entwickeln Websites mit klarer Positionierung,\nklarer Führung und messbarem Ziel: Anfragen.\n\nJede Seite hat eine Aufgabe.\nJeder Abschnitt führt zur Entscheidung.",
+      "positioningTitle": "Unsere Spezialisierung",
+      "positioningText": "Unsere Stärke liegt in der Kombination aus\nklarer Struktur, verständlichen Texten\nund einer Führung, die Vertrauen aufbaut.\n\nDesign folgt bei uns immer der Funktion – nicht umgekehrt.",
+      "whyTitle": "Warum wir hier Spezialist sind",
+      "whyBullets": [
+        "POSITIONIERUNG UND STRUKTUR ZUERST, DESIGN DANACH",
+        "JEDER ABSCHNITT HAT EINE KLARE AUFGABE",
+        "FOKUS AUF ANFRAGEN, NICHT AUF KLICKS"
+      ],
+      "includesTitle": "Sie erhalten",
+      "includesBullets": [
+        "KLARE STARTSEITE MIT EINDEUTIGEM NUTZENVERSPRECHEN",
+        "STRUKTUR, DIE VERTRAUEN UND TEMPO SCHAFFT",
+        "TEXTE, DIE VERSTANDEN WERDEN",
+        "SAUBERE TECHNIK FÜR SCHNELLE LADEZEITEN"
+      ],
+      "processTitle": "So läuft es ab",
+      "processSteps": [
+        "KURZ-WORKSHOP ZUR POSITIONIERUNG",
+        "ENTWURF VON STRUKTUR UND BOTSCHAFT",
+        "DESIGN UND UMSETZUNG",
+        "LIVEGANG UND FEINSCHLIFF"
+      ],
+      "ctaPrimary": "Offerte erhalten",
+      "ctaPrimaryLink": "/#contact",
+      "ctaSecondary": "Referenzen ansehen",
+      "ctaSecondaryLink": "/projects?category=web"
+    },
+    "ki-sichtbarkeit": {
+      "title": "KI-Sichtbarkeitsservice",
+      "subtitle": "Damit KI-Systeme Sie korrekt verstehen\nund aktiv empfehlen.",
+      "benefitTitle": "Ihr Ergebnis",
+      "benefitText": "Ihr Unternehmen wird von ChatGPT, Google AI & Co.\nrichtig eingeordnet und häufiger genannt.",
+      "valueTitle": "Mehrwert",
+      "valueText": "KI empfiehlt nicht die lautesten,\nsondern die verständlichsten Anbieter.\n\nWir sorgen dafür, dass Ihre Inhalte so strukturiert sind,\ndass KI-Systeme eindeutig erkennen,\nwofür Ihr Angebot relevant ist.",
+      "positioningTitle": "Unsere Spezialisierung",
+      "positioningText": "Wir sind spezialisiert auf KI-Verständlichkeit:\nklare Datenstrukturen,\neindeutige Inhalte\nund eine Strategie, die konkrete Antworten auslöst.",
+      "whyTitle": "Warum wir hier Spezialist sind",
+      "whyBullets": [
+        "FOKUS AUF KI-INTERPRETATION STATT KLASSISCHE SEO-MYTHEN",
+        "STRUKTUR UND INHALTE AUS SICHT VON LLMs GEDACHT",
+        "KONKRETE TO-DOS STATT VAGER EMPFEHLUNGEN"
+      ],
+      "includesTitle": "Sie erhalten",
+      "includesBullets": [
+        "KI-SICHTBARKEITS-CHECK (AUDIT)",
+        "KLARE PRIORISIERTE TO-DO-LISTE",
+        "UMSETZUNG DER KI-OPTIMIERTEN STRUKTUR",
+        "MESSBAREN STATUS NACH DER UMSETZUNG"
+      ],
+      "processTitle": "So läuft es ab",
+      "processSteps": [
+        "ANALYSE IHRER AKTUELLEN KI-AUFFINDBARKEIT",
+        "STRATEGIE UND PRIORITÄTENLISTE",
+        "UMSETZUNG DER STRUKTUR UND INHALTE",
+        "ABSCHLUSS-CHECK MIT KLAREN EMPFEHLUNGEN"
+      ],
+      "ctaPrimary": "Offerte erhalten",
+      "ctaPrimaryLink": "/#contact",
+      "ctaSecondary": "Referenzen ansehen",
+      "ctaSecondaryLink": "/projects?category=ai"
     }
   },
 
@@ -113,28 +194,49 @@
     "projekte_title": "Alle Projekte ansehen",
     "title": "Ausgewählte Projekte",
     "subtitle": "Ein Einblick in unsere jüngsten Arbeiten und digitalen Transformationen.",
+    "categories": [
+      { "id": "all", "label": "Alle" },
+      { "id": "video", "label": "KI Marketing Videos" },
+      { "id": "web", "label": "Webseiten" },
+      { "id": "ai", "label": "KI Sichtbarkeitsservice" }
+    ],
     "items": [
       {
         "name": "DigitalSens",
         "description": "Plattform für moderne KI-Bildung und digitale Kompetenz. Hochperformante Web-Applikation mit Fokus auf User Experience.",
+        "forWhom": "Für Bildungsanbieter und Unternehmen, die KI-Kompetenzen vermitteln",
+        "deliverable": "Web-Applikation mit klarer Kurs- und Inhaltsstruktur",
+        "result": "Schnelle Orientierung und klare Nutzerführung",
         "link": "https://www.digitalsens.ch",
-        "video": "/demo_digitalsens.mp4",
+        "logo": "/references/logo_digitalsens.png",
+        "video": "/demovideos/demo_digitalsens.mp4",
+        "serviceCategory": "web",
         "tags": ["Web Design", "GEO"]
       },
       {
         "name": "Memora-Moments",
         "description": "Design-orientierte Plattform für emotionale Erinnerungen mit Fokus auf Ästhetik, Storytelling und Markenidentität.",
+        "forWhom": "Für Marken mit emotionalen Produkten und hohen Designansprüchen",
+        "deliverable": "Storytelling-Plattform mit starker Markenidentität",
+        "result": "Vertrauen und Emotion in wenigen Klicks",
         "link": "https://www.memora-moments.ch",
-        "video": "/demo_memora_moments.mp4",
+        "logo": "/references/logo_memora.png",
+        "video": "/demovideos/demo_memora_moments.mp4",
+        "serviceCategory": "web",
         "tags": ["Web Design", "GEO"]
       },
       {
         "name": "PS-Schubiger",
         "slug": "psschubiger",
         "description": "Marketingvideo für PS Schubiger mit KI-Avatar, Storyboard und Retail-Fokus.",
+        "forWhom": "Für Retail und erklärungsbedürftige Angebote",
+        "deliverable": "KI-gestütztes Marketingvideo inkl. Storyboard",
+        "result": "Produkt in Sekunden verständlich – klare Kontaktaufnahme",
         "link": "/#contact",
         "ctaLabel": "Kontakt aufnehmen",
-        "video": "/demo_psschubiger.mp4",
+        "logo": "/references/logo_psschubiger.png",
+        "video": "/demovideos/demo_psschubiger.mp4",
+        "serviceCategory": "video",
         "tags": ["Marketing Video", "Retail"],
         "orientation": "portrait"
       }
