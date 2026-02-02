@@ -1,6 +1,6 @@
 import { useLanguage } from "../context/LanguageContext";
 import { Link, useLocation } from "react-router-dom";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, Volume2, VolumeX } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 
 export default function AllProjectsPage() {
@@ -24,6 +24,8 @@ export default function AllProjectsPage() {
     const first = projects[0];
     return first ? getId(first) : "";
   });
+
+  const [mutedById, setMutedById] = useState<Record<string, boolean>>({});
 
   const groupedProjects = useMemo(() => {
     const map = new Map<string, any[]>();
@@ -163,7 +165,7 @@ export default function AllProjectsPage() {
                   <div className={"relative w-full overflow-hidden " + (project.orientation === "portrait" ? "aspect-[9/16]" : "aspect-[16/9]")}>
                     <video
                       key={project.video}
-                      muted
+                      muted={mutedById[getId(project)] ?? true}
                       loop
                       playsInline
                       autoPlay
@@ -181,6 +183,23 @@ export default function AllProjectsPage() {
                         />
                       </div>
                     )}
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setMutedById((prev) => ({
+                          ...prev,
+                          [getId(project)]: !(prev[getId(project)] ?? true),
+                        }))
+                      }
+                      aria-label={(mutedById[getId(project)] ?? true) ? "Ton einschalten" : "Ton ausschalten"}
+                      className="absolute top-5 right-5 z-10 rounded-full bg-black/60 border border-white/10 p-4 text-white backdrop-blur-md hover:border-cyan-500/50 hover:text-cyan-300 transition-all"
+                    >
+                      {(mutedById[getId(project)] ?? true) ? (
+                        <VolumeX className="w-5 h-5 sm:w-6 sm:h-6" />
+                      ) : (
+                        <Volume2 className="w-5 h-5 sm:w-6 sm:h-6" />
+                      )}
+                    </button>
                   </div>
                 </div>
 
