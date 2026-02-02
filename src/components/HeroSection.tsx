@@ -57,7 +57,7 @@ export function HeroSection() {
             
             <p className="text-lg sm:text-xl md:text-3xl text-slate-300 font-light tracking-wide max-w-4xl mx-auto leading-relaxed">
               {t.hero.subtitle_main} <br className="hidden md:block" />
-              {t.hero.subtitle_sub} <span className="text-white font-medium">{t.hero.subtitle_highlight}</span>.
+              {t.hero.subtitle_sub} <span className="text-white font-medium">{t.hero.subtitle_highlight}</span>
             </p>
           </div>
         </motion.div>

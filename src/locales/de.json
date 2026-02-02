@@ -14,7 +14,7 @@
     "title_highlight": "verkauft es nicht.“",
     "subtitle_main": "Wir strukturieren Ihr Angebot",
     "subtitle_sub": "wie es verkauft wird.",
-    "subtitle_highlight": "Standard setzen"
+    "subtitle_highlight": ""
   },
   "services": {
     "blue_title": "Unsere Services",
@@ -203,6 +203,8 @@
     "items": [
       {
         "name": "DigitalSens",
+        "groupId": "digitalsens",
+        "groupLabel": "DigitalSens",
         "description": "Plattform für moderne KI-Bildung und digitale Kompetenz. Hochperformante Web-Applikation mit Fokus auf User Experience.",
         "forWhom": "Für Bildungsanbieter und Unternehmen, die KI-Kompetenzen vermitteln",
         "deliverable": "Web-Applikation mit klarer Kurs- und Inhaltsstruktur",
@@ -215,6 +217,8 @@
       },
       {
         "name": "Memora-Moments",
+        "groupId": "memora-moments",
+        "groupLabel": "Memora Moments",
         "description": "Design-orientierte Plattform für emotionale Erinnerungen mit Fokus auf Ästhetik, Storytelling und Markenidentität.",
         "forWhom": "Für Marken mit emotionalen Produkten und hohen Designansprüchen",
         "deliverable": "Storytelling-Plattform mit starker Markenidentität",
@@ -226,7 +230,26 @@
         "tags": ["Web Design", "GEO"]
       },
       {
+        "name": "PS-Schubiger Herrengasse",
+        "groupId": "psschubiger",
+        "groupLabel": "PS-Schubiger",
+        "slug": "psschubiger-herrengasse",
+        "description": "Projektvideo für die Überbauung Herrengasse mit Fokus auf Angebot, Lage und klare Anfrage.",
+        "forWhom": "Für Immobilienprojekte und Überbauungen",
+        "deliverable": "Projektvideo mit Storyboard und klarer CTA",
+        "result": "Mehr qualifizierte Anfragen für die Überbauung",
+        "link": "/#contact",
+        "ctaLabel": "Kontakt aufnehmen",
+        "logo": "/references/logo_psschubiger.png",
+        "video": "/demovideos/demo_psschubiger_projekt_herrengasse.mp4",
+        "serviceCategory": "video",
+        "tags": ["Marketing Video", "Immobilien"],
+        "orientation": "portrait"
+      },
+      {
         "name": "PS-Schubiger",
+        "groupId": "psschubiger",
+        "groupLabel": "PS-Schubiger",
         "slug": "psschubiger",
         "description": "Marketingvideo für PS Schubiger mit KI-Avatar, Storyboard und Retail-Fokus.",
         "forWhom": "Für Retail und erklärungsbedürftige Angebote",
