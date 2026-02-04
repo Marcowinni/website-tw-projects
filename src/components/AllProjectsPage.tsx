@@ -161,7 +161,7 @@ export default function AllProjectsPage() {
           <div className="space-y-10">
             {(activeGroup?.items?.length ? activeGroup.items : [activeProject]).map((project: any) => (
               <div key={getId(project)} className="grid lg:grid-cols-[1.2fr_1fr] gap-8 items-start">
-                <div className="relative rounded-[2.5rem] overflow-hidden border border-white/10 bg-white/5 backdrop-blur-md">
+                <div className={"relative rounded-[2.5rem] overflow-hidden border border-white/10 bg-white/5 backdrop-blur-md " + (project.orientation === "portrait" ? "max-w-xl mx-auto" : "")}>
                   <div className={"relative w-full overflow-hidden " + (project.orientation === "portrait" ? "aspect-[9/16]" : "aspect-[16/9]")}>
                     <video
                       key={project.video}

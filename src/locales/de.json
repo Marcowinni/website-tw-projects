@@ -247,6 +247,23 @@
         "orientation": "portrait"
       },
       {
+        "name": "Projekt Wald Felsenkellerstrasse",
+        "groupId": "psschubiger",
+        "groupLabel": "PS-Schubiger",
+        "slug": "psschubiger-projekt-wald",
+        "description": "Projektvideo für die Überbauung Projekt Wald Felsenkellerstrasse mit Fokus auf Angebot, Lage und klare Anfrage.",
+        "forWhom": "Für Immobilienprojekte und Überbauungen",
+        "deliverable": "Projektvideo mit Storyboard und klarer CTA",
+        "result": "Mehr qualifizierte Anfragen für die Überbauung",
+        "link": "/#contact",
+        "ctaLabel": "Kontakt aufnehmen",
+        "logo": "/references/logo_psschubiger.png",
+        "video": "/demovideos/demo_psschubiger_projekt_wald.mp4",
+        "serviceCategory": "video",
+        "tags": ["Marketing Video", "Immobilien"],
+        "orientation": "portrait"
+      },
+      {
         "name": "PS-Schubiger",
         "groupId": "psschubiger",
         "groupLabel": "PS-Schubiger",
@@ -263,6 +280,7 @@
         "tags": ["Marketing Video", "Retail"],
         "orientation": "portrait"
       }
+      
     ]
   },
   "testimonials": {
