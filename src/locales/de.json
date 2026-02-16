@@ -18,15 +18,15 @@
   },
   "services": {
     "blue_title": "Unsere Services",
-    "title": "Drei Services – ein Ziel: mehr qualifizierte Anfragen",
-    "subtitle": "Wir helfen Unternehmen, Angebote klar zu kommunizieren, von KI-Systemen gefunden zu werden\nund Besucher gezielt zur Anfrage zu führen.",
+    "title": "Mehr qualifizierte Anfragen",
+    "subtitle": "Gehe mit KI, oder gehe mit KI.",
     "overview": {
       "items": [
         {
           "id": "ki-videos",
           "title": "KI Marketing Videos",
           "subtitle": "Werbevideos für neue Überbauungen – verständlich, visuell, anfrageorientiert",
-          "benefit": "Interessenten verstehen das Bauprojekt in unter 60 Sekunden\nund wissen sofort, ob und wie sie anfragen können.",
+          "benefit": "Interessenten verstehen das Bauprojekt in unter 60 Sekunden\nun wissen sofort, ob und wie sie anfragen können.",
           "bullets": [
             "Fokus auf Überbauungen & Neubauprojekte",
             "Klare Nutzenkommunikation statt Imagefilm",
@@ -37,38 +37,6 @@
           "ctaSecondary": "REFERENZEN ANSEHEN",
           "ctaSecondaryLink": "/projects?category=video",
           "detailLink": "/services/ki-videos"
-        },
-        {
-          "id": "webseiten",
-          "title": "Webseiten",
-          "subtitle": "Websites, die Anfragen auslösen",
-          "benefit": "Ihre Website wird in 10 Sekunden verstanden und führt Besucher gezielt zur Anfrage.",
-          "bullets": [
-            "Klare Positionierung statt Design-Show",
-            "Struktur, die Vertrauen aufbaut",
-            "Schnell live, sauber messbar"
-          ],
-          "ctaPrimary": "Offerte erhalten",
-          "ctaPrimaryLink": "/#contact",
-          "ctaSecondary": "Referenzen ansehen",
-          "ctaSecondaryLink": "/projects?category=web",
-          "detailLink": "/services/webseiten"
-        },
-        {
-          "id": "ki-sichtbarkeit",
-          "title": "AI Visibility",
-          "subtitle": "Empfehlbar in ChatGPT, Google AI & Co.",
-          "benefit": "Ihre Inhalte werden von KI-Systemen korrekt verstanden,\neingeordnet und häufiger empfohlen.",
-          "bullets": [
-            "Struktur, die KI eindeutig interpretiert",
-            "Inhalte, die konkrete Antworten liefern",
-            "Klare Schritte statt Vermutungen"
-          ],
-          "ctaPrimary": "OFFERTE ERHALTEN",
-          "ctaPrimaryLink": "/#contact",
-          "ctaSecondary": "REFERENZEN ANSEHEN",
-          "ctaSecondaryLink": "/projects?category=ai",
-          "detailLink": "/services/ki-sichtbarkeit"
         }
       ]
     }
@@ -292,7 +260,7 @@
   "about": {
     "title": "Über uns",
     "mission_title": "Unsere Vision",
-    "mission_text": "Wir verbinden Design und Technologie, damit du mit deiner Website mehr Anfragen gewinnst und Prozesse mit KI spürbar vereinfachst.",
+    "mission_text": "Wir verbinden Marketing und Technologie, damit du nicht zurückbleibst.",
     "team_title": "Das Team",
     "marco_role": "Co-Founder & Tech Lead",
     "till_role": "Co-Founder & Strategy",

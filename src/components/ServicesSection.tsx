@@ -85,8 +85,14 @@ export function ServicesSection() {
   const renderCards = (
     items: any[], 
     containerClassName = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-8 max-w-7xl mx-auto"
-  ) => (
-    <div className={containerClassName}>
+  ) => {
+    // Wenn nur ein Item, zentrieren
+    const gridClassName = items.length === 1 
+      ? "flex justify-center items-start w-full max-w-5xl mx-auto"
+      : containerClassName;
+
+    return (
+    <div className={gridClassName}>
       {items.map((service: any, index: number) => {
         const primaryLabel = service.ctaPrimary;
         const primaryLink = service.ctaPrimaryLink;
@@ -97,7 +103,7 @@ export function ServicesSection() {
 
         return (
           // Wir übergeben den Index für das versetzte Schweben
-          <SpaceCard key={service.id} index={index} className="h-full">
+          <SpaceCard key={service.id} index={index} className={`${items.length === 1 ? 'w-full max-w-2xl' : 'h-full'}`}> 
             <div
               className="p-6 sm:p-8 xl:p-10 flex flex-col h-full cursor-pointer"
               role="button"
@@ -177,7 +183,8 @@ export function ServicesSection() {
         );
       })}
     </div>
-  );
+    );
+  };
 
   if (!t.services?.overview) return null;
 
