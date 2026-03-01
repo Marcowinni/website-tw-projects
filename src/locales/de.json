@@ -1,4 +1,29 @@
 {
+  "about": {
+    "title": "Über uns",
+    "mission_title": "Unsere Vision",
+    "mission_text": "Wir verbinden Marketing und Technologie, damit du nicht zurückbleibst.",
+    "team_title": "Das Team",
+    "marco_role": "Co-Founder & Tech Lead",
+    "till_role": "Co-Founder & Strategy",
+    "back_button": "Zurück",
+    "bild_weiter": "Klicken für das nächste Bild",
+    "hobbys_title": "Hobbys & Interessen",
+    "team_details": {
+      "marco": {
+        "name": "Marco Winistörfer",
+        "description": "Als technischer Kopf bei TW Services habe ich Freude daran, digitale und KI-basierte Lösungen zu bauen, die wirklich funktionieren. Ich unterstütze Unternehmen dabei, Technologie sinnvoll einzusetzen – nicht als Selbstzweck, sondern als Werkzeug, das den Arbeitsalltag einfacher und effizienter macht.",
+        "hobbies": ["Kitesurfen", "Wandern", "Fussball"],
+        "images": ["/about/wini.png", "/about/wini_kitesurf.jpeg", "/about/wini_wandern.jpeg"]
+      },
+      "till": {
+        "name": "Till Schubiger",
+        "description": "Strategie und Innovation sind mein Zuhause. Ich sorge dafür, dass unsere digitalen Lösungen nicht nur technisch brillant sind, sondern auch einen echten geschäftlichen Mehrwert für unsere Kunden generieren.",
+        "hobbies": ["Wandern", "Reisen", "Fitness"],
+        "images": ["/about/till.jpg", "/about/till_schnee.jpeg", "/about/till_australien.jpeg"]
+      }
+    }
+  },
   "header": {
     "nav": {
       "home": "Home",
@@ -10,16 +35,16 @@
     "cta": "Erstberatung vereinbaren"
   },
   "hero": {
-    "title_main": "„Wenn Ihr Angebot nicht verstanden wird,",
-    "title_highlight": "verkauft es nicht.“",
-    "subtitle_main": "Wir strukturieren Ihr Angebot",
-    "subtitle_sub": "wie es verkauft wird.",
-    "subtitle_highlight": ""
+    "title_main": "Wir strukturieren Ihr Angebot",
+    "title_highlight": "mit KI & Strategie",
+    "subtitle_main": "Gehen sie Mit KI",
+    "subtitle_sub": "oder gehen Sie,",
+    "subtitle_highlight": "mit KI."
   },
   "services": {
     "blue_title": "Unsere Services",
     "title": "Mehr qualifizierte Anfragen",
-    "subtitle": "Gehe mit KI, oder gehe mit KI.",
+    "subtitle": "",
     "overview": {
       "items": [
         {
@@ -164,40 +189,30 @@
     "subtitle": "Ein Einblick in unsere jüngsten Arbeiten und digitalen Transformationen.",
     "categories": [
       { "id": "all", "label": "Alle" },
-      { "id": "video", "label": "KI Marketing Videos" },
-      { "id": "web", "label": "Webseiten" },
-      { "id": "ai", "label": "KI Sichtbarkeitsservice" }
+      { "id": "video", "label": "KI Marketing Videos" }
     ],
     "items": [
+      
       {
-        "name": "DigitalSens",
-        "groupId": "digitalsens",
-        "groupLabel": "DigitalSens",
-        "description": "Plattform für moderne KI-Bildung und digitale Kompetenz. Hochperformante Web-Applikation mit Fokus auf User Experience.",
-        "forWhom": "Für Bildungsanbieter und Unternehmen, die KI-Kompetenzen vermitteln",
-        "deliverable": "Web-Applikation mit klarer Kurs- und Inhaltsstruktur",
-        "result": "Schnelle Orientierung und klare Nutzerführung",
-        "link": "https://www.digitalsens.ch",
-        "logo": "/references/logo_digitalsens.png",
-        "video": "/demovideos/demo_digitalsens.mp4",
-        "serviceCategory": "web",
-        "tags": ["Web Design", "GEO"]
+        "id": "psschubiger-projekt-schmerikon",
+        "name": "Projekt Schmerikon",
+        "groupId": "psschubiger",
+        "groupLabel": "PS-Schubiger",
+        "slug": "psschubiger-projekt-schmerikon",
+        "description": "Projektvideo für die Überbauung Schmerikon mit Fokus auf Angebot, Lage und klare Anfrage.",
+        "forWhom": "Für Immobilienprojekte und Überbauungen",
+        "deliverable": "Projektvideo mit Storyboard und klarer CTA",
+        "result": "Mehr qualifizierte Anfragen für die Überbauung",
+        "link": "/#contact",
+        "ctaLabel": "Kontakt aufnehmen",
+        "logo": "/references/logo_psschubiger.png",
+        "video": "/demovideos/demo_psschubiger_projekt_schmerikon.mp4",
+        "serviceCategory": "video",
+        "tags": ["Marketing Video", "Immobilien"],
+        "orientation": "portrait"
       },
       {
-        "name": "Memora-Moments",
-        "groupId": "memora-moments",
-        "groupLabel": "Memora Moments",
-        "description": "Design-orientierte Plattform für emotionale Erinnerungen mit Fokus auf Ästhetik, Storytelling und Markenidentität.",
-        "forWhom": "Für Marken mit emotionalen Produkten und hohen Designansprüchen",
-        "deliverable": "Storytelling-Plattform mit starker Markenidentität",
-        "result": "Vertrauen und Emotion in wenigen Klicks",
-        "link": "https://www.memora-moments.ch",
-        "logo": "/references/logo_memora.png",
-        "video": "/demovideos/demo_memora_moments.mp4",
-        "serviceCategory": "web",
-        "tags": ["Web Design", "GEO"]
-      },
-      {
+        "id": "psschubiger-herrengasse",
         "name": "PS-Schubiger Herrengasse",
         "groupId": "psschubiger",
         "groupLabel": "PS-Schubiger",
@@ -215,6 +230,7 @@
         "orientation": "portrait"
       },
       {
+        "id": "psschubiger-projekt-wald",
         "name": "Projekt Wald Felsenkellerstrasse",
         "groupId": "psschubiger",
         "groupLabel": "PS-Schubiger",
@@ -232,6 +248,25 @@
         "orientation": "portrait"
       },
       {
+        "id": "psschubiger-projekt-eschenbach",
+        "name": "Projekt Eschenbach",
+        "groupId": "psschubiger",
+        "groupLabel": "PS-Schubiger",
+        "slug": "psschubiger-projekt-eschenbach",
+        "description": "Projektvideo für die Überbauung Eschenbach mit Fokus auf Angebot, Lage und klare Anfrage.",
+        "forWhom": "Für Immobilienprojekte und Überbauungen",
+        "deliverable": "Projektvideo mit Storyboard und klarer CTA",
+        "result": "Mehr qualifizierte Anfragen für die Überbauung",
+        "link": "/#contact",
+        "ctaLabel": "Kontakt aufnehmen",
+        "logo": "/references/logo_psschubiger.png",
+        "video": "/demovideos/demo_psschubiger_projekt_eschenbach.mp4",
+        "serviceCategory": "video",
+        "tags": ["Marketing Video", "Immobilien"],
+        "orientation": "portrait"
+      },
+      {
+        "id": "psschubiger",
         "name": "PS-Schubiger",
         "groupId": "psschubiger",
         "groupLabel": "PS-Schubiger",
@@ -247,8 +282,25 @@
         "serviceCategory": "video",
         "tags": ["Marketing Video", "Retail"],
         "orientation": "portrait"
+      },
+      {
+        "id": "bildstoeckli-goldig-wohnen",
+        "name": "Goldig Wohnen",
+        "groupId": "bildstoeckli",
+        "groupLabel": "Bildstöckli AG",
+        "slug": "bildstoeckli-goldig-wohnen",
+        "description": "Projektvideo für Bildstöckli GmbH – Goldig Wohnen. Fokus auf hochwertiges Wohnen und visuelle Präsentation.",
+        "forWhom": "Für Immobilienprojekte und hochwertige Wohnangebote",
+        "deliverable": "Projektvideo mit Storyboard und klarer CTA",
+        "result": "Mehr qualifizierte Anfragen für das Wohnprojekt",
+        "link": "/#contact",
+        "ctaLabel": "Kontakt aufnehmen",
+        "logo": "/references/logo_bildstoeckli.jpg",
+        "video": "/demovideos/demo_bildstoeckli_goldig_wohnen.mp4",
+        "serviceCategory": "video",
+        "tags": ["Marketing Video", "Immobilien"],
+        "orientation": "portrait"
       }
-      
     ]
   },
   "testimonials": {
@@ -256,31 +308,6 @@
     "subtitle": "Was unsere Partner über TW Projects Services sagen.",
     "swipeHint": "Wischen für mehr",
     "items": []
-  },
-  "about": {
-    "title": "Über uns",
-    "mission_title": "Unsere Vision",
-    "mission_text": "Wir verbinden Marketing und Technologie, damit du nicht zurückbleibst.",
-    "team_title": "Das Team",
-    "marco_role": "Co-Founder & Tech Lead",
-    "till_role": "Co-Founder & Strategy",
-    "back_button": "Zurück",
-    "bild_weiter": "Klicken für das nächste Bild",
-    "hobbys_title": "Hobbys & Interessen",
-    "team_details": {
-      "marco": {
-        "name": "Marco Winistörfer",
-        "description": "Als technischer Kopf bei TW Services habe ich Freude daran, digitale und KI-basierte Lösungen zu bauen, die wirklich funktionieren. Ich unterstütze Unternehmen dabei, Technologie sinnvoll einzusetzen – nicht als Selbstzweck, sondern als Werkzeug, das den Arbeitsalltag einfacher und effizienter macht.",
-        "hobbies": ["Kitesurfen", "Wandern", "Fussball"],
-        "images": ["/about/wini.png", "/about/wini_kitesurf.jpeg", "/about/wini_wandern.jpeg"]
-      },
-      "till": {
-        "name": "Till Schubiger",
-        "description": "Strategie und Innovation sind mein Zuhause. Ich sorge dafür, dass unsere digitalen Lösungen nicht nur technisch brillant sind, sondern auch einen echten geschäftlichen Mehrwert für unsere Kunden generieren.",
-        "hobbies": ["Wandern", "Reisen", "Fitness"],
-        "images": ["/about/till.jpg", "/about/till_schnee.jpeg", "/about/till_australien.jpeg"]
-      }
-    }
   },
   "footer": {
     "description": "TW Projects Services – Smarte Weblösungen und KI-Automatisierung für moderne Unternehmen.",
@@ -291,6 +318,7 @@
       "terms": "AGB"
     }
   },
+  
   "legal": {
     "imprint_title": "Impressum",
     "terms_title": "ALLGEMEINE GESCHÄFTSBEDINGUNGEN (AGB)",
@@ -334,5 +362,4 @@
     "terms_12_title": "12. Salvatorische Klausel",
     "terms_12_text": "Sollten einzelne Bestimmungen dieser AGB unwirksam oder undurchführbar sein, bleibt die Wirksamkeit der übrigen Bestimmungen unberührt."
   }
-
 }

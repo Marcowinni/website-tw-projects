@@ -9,9 +9,8 @@ export function ReferenceSection() {
 
   // Mapping der Logos zu den IDs in der AllProjectsPage
   const logos = [
-    { src: "/references/logo_digitalsens.png", alt: "DigitalSens", id: "digitalsens", category: "web" },
-    { src: "/references/logo_memora.png", alt: "Memora Moments", id: "memora-moments", category: "web" },
     { src: "/references/logo_psschubiger.png", alt: "P.S. Schubiger", id: "psschubiger", category: "video" },
+    { src: "/references/logo_bildstoeckli.jpg", alt: "Bildstoeckli AG", id: "bildstoeckli", category: "video" },
   ];
 
   return (
