@@ -49,13 +49,13 @@
       "items": [
         {
           "id": "ki-videos",
-          "title": "KI Marketing Videos",
-          "subtitle": "Werbevideos für neue Überbauungen – verständlich, visuell, anfrageorientiert",
-          "benefit": "Interessenten verstehen das Bauprojekt in unter 60 Sekunden\nun wissen sofort, ob und wie sie anfragen können.",
+          "title": "Time-to-Sell Video System",
+          "subtitle": "Premium-Werbefilme für Neubauprojekte und Überbauungen – euer Projekt in 45 Sekunden klar und begehrenswert erklärt.",
+          "benefit": "Interessenten qualifizieren sich selbst, ihr spart Erklär-Aufwand im Vertrieb – mehr passende Anfragen, kürzere Vermarktungsdauer.",
           "bullets": [
-            "Fokus auf Überbauungen & Neubauprojekte",
-            "Klare Nutzenkommunikation statt Imagefilm",
-            "Video inkl. konkreter Vermarktungsempfehlung"
+            "Fokus auf Überbauungen & Neubauprojekte im DACH-Raum",
+            "KI-gestützte Premium-Visualisierung mit klarer Story",
+            "Done-for-you: Setup in 14 Tagen, minimaler Aufwand für euch"
           ],
           "ctaPrimary": "OFFERTE ERHALTEN",
           "ctaPrimaryLink": "/#contact",
@@ -68,33 +68,32 @@
   },
   "servicesDetail": {
     "ki-videos": {
-      "title": "KI Marketing Videos",
-      "subtitle": "Erklärvideo + Marketing-Ausrichtung –\ndamit aus Aufmerksamkeit konkrete Anfragen werden.",
+      "title": "Time-to-Sell Video System",
+      "subtitle": "Premium-Werbefilme für Neubauprojekte und Überbauungen –\neuer komplexes Projekt in 45 Sekunden klar und begehrenswert auf den Punkt gebracht.",
       "benefitTitle": "Ihr Ergebnis",
-      "benefitText": "Interessenten verstehen Ihr Angebot in Sekunden\nund wissen genau, ob – und wie – sie anfragen sollen.",
+      "benefitText": "Ihr werdet unabhängig vom Portal-Algorithmus: Euer Projekt wird in 60 Sekunden so klar und begehrenswert erklärt, dass sich Interessenten selbst qualifizieren – mehr passende Anfragen, kürzere Vermarktungsdauer und spürbar weniger Druck im Alltag.",
       "valueTitle": "Mehrwert",
-      "valueText": "Wir erstellen keine reinen Erklärvideos.\nWir entwickeln eine klare Kernbotschaft und setzen sie als Video um,\ndas gezielt dort wirkt, wo Ihre Zielgruppe entscheidet.\n\nDas Ergebnis ist nicht nur Aufmerksamkeit,\nsondern qualifizierte Reaktionen.",
-      "positioningTitle": "Unsere Spezialisierung",
-      "positioningText": "Wir sind spezialisiert auf erklärungsbedürftige Angebote,\nbei denen klassische Videos zu wenig Wirkung haben.\n\nUnser Fokus liegt auf klarer Struktur,\nverständlicher Botschaft\nund einer eindeutigen Handlungsaufforderung.",
+      "valueText": "Hochpreisige Neubauprojekte bleiben oft zu lange am Markt, weil Unsicherheit und Komplexität Kaufentscheide bremsen. Renderings und Broschüren zeigen, wie es aussieht – erklären aber nicht, warum man gerade dieses Projekt kaufen soll.\n\nWir entwickeln ein System, das Käufer und interne Stakeholder schnell zur Klarheit führt: KI-gestützte Premium-Visualisierung kombiniert mit klarer Story, Script und Erklär-Logik.",
+      "positioningTitle": "Für wen",
+      "positioningText": "Projektentwickler, Bauträger und Verantwortliche für die Vermarktung von Neubauprojekten und Überbauungen im DACH-Raum – Head of Marketing, Projektleiter Vermarktung, Geschäftsführer.",
       "whyTitle": "Warum wir hier Spezialist sind",
       "whyBullets": [
-        "ERKLÄRVIDEO UND MARKETING-LOGIK AUS EINER HAND",
-        "FOKUS AUF REAKTIONEN UND ANFRAGEN STATT ÄSTHETIK",
+        "KI-VISUALISIERUNG UND MARKETING-LOGIK AUS EINER HAND",
+        "DONE-FOR-YOU: MINIMALER AUFWAND, SCHNELLE LIEFERUNG",
         "ERPROBTE STRUKTUR: PROBLEM → LÖSUNG → BEWEIS → CTA"
       ],
       "includesTitle": "Sie erhalten",
       "includesBullets": [
-        "KLARES KONZEPT MIT EINER ZENTRALEN KERNBOTSCHAFT",
-        "SKRIPT UND STORYBOARD FÜR EIN SOFORT VERSTÄNDLICHES VIDEO",
-        "KI-AVATAR OPTIONAL, FALLS SINNVOLL",
-        "KONKRETE VERMARKTUNGSEMPFEHLUNG\n(KANAL, EINSTIEG, CALL-TO-ACTION)"
+        "PREMIUM-WERBEFILM",
+        "STORY, SKRIPT UND ERKLÄR-LOGIK FÜR SOFORTIGE KLARHEIT",
+        "OPTIONAL: META-ADS-STEUERUNG UND LEAD-MANAGEMENT"
       ],
       "processTitle": "So läuft es ab",
       "processSteps": [
-        "KURZ-INTERVIEW ZU ANGEBOT UND ZIELKUNDEN",
-        "AUSARBEITUNG DER BOTSCHAFT UND STORYLINE",
-        "PRODUKTION UND ABSTIMMUNG",
-        "AUSLIEFERUNG INKL. MARKETING-FAHRPLAN"
+        "KICK-OFF & MATERIALPRÜFUNG",
+        "STORY & SKRIPT",
+        "PRODUKTION V1 → 1–2 FEEDBACKRUNDEN",
+        "ÜBERGABE & IMPLEMENTIERUNG ALS VERMARKTUNGS-ASSET-SYSTEM"
       ],
       "ctaPrimary": "Offerte erhalten",
       "ctaPrimaryLink": "/#contact",
@@ -310,7 +309,7 @@
     "items": []
   },
   "footer": {
-    "description": "TW Projects Services – Smarte Weblösungen und KI-Automatisierung für moderne Unternehmen.",
+    "description": "Ihr Projekt in 45 Sekunden klar – mehr qualifizierte Anfragen, weniger Erklär-Aufwand im Vertrieb.",
     "company": "Rechtliches",
     "rights": "Alle Rechte vorbehalten.",
     "links": {

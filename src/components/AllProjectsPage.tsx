@@ -1,7 +1,7 @@
 import { useLanguage } from "../context/LanguageContext";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { ArrowLeft, ArrowRight, Volume2, VolumeX } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 
 export default function AllProjectsPage() {
   const { t } = useLanguage();
@@ -10,78 +10,14 @@ export default function AllProjectsPage() {
 
   const getId = (project: any) => project.slug ?? project.name.toLowerCase().replace(/\s+/g, "-");
   const isExternal = (link?: string) => !!link && link.startsWith("http");
-  const categories = t.references.categories ?? [];
-
-  const location = useLocation();
-  const [activeCategory, setActiveCategory] = useState("all");
-
-  const filteredProjects = useMemo(() => {
-    if (activeCategory === "all") return projects;
-    return projects.filter((project: any) => project.serviceCategory === activeCategory);
-  }, [projects, activeCategory]);
-
-  const [activeProjectId, setActiveProjectId] = useState<string>(() => {
-    const first = projects[0];
-    return first ? getId(first) : "";
-  });
 
   const [mutedById, setMutedById] = useState<Record<string, boolean>>({});
 
-  const groupedProjects = useMemo(() => {
-    const map = new Map<string, any[]>();
-    filteredProjects.forEach((project: any) => {
-      const key = project.groupId ?? getId(project);
-      if (!map.has(key)) map.set(key, []);
-      map.get(key)!.push(project);
-    });
-    return Array.from(map.entries()).map(([groupId, items]) => ({
-      groupId,
-      label: items[0]?.groupLabel ?? items[0]?.name ?? groupId,
-      logo: items[0]?.logo,
-      items,
-    }));
-  }, [filteredProjects]);
-
-  const [activeGroupId, setActiveGroupId] = useState<string>(() => {
-    const first = projects[0];
-    return first?.groupId ?? (first ? getId(first) : "");
-  });
-
-  useEffect(() => {
-    const params = new URLSearchParams(location.search);
-    const category = params.get("category");
-    if (!category) return;
-    const validCategories = categories.map((c: any) => c.id);
-    if (!validCategories.includes(category)) return;
-    setActiveCategory(category);
-    const first = (category === "all" ? projects : projects.filter((p: any) => p.serviceCategory === category))[0];
-    if (first) {
-      setActiveProjectId(getId(first));
-      setActiveGroupId(first.groupId ?? getId(first));
-    }
-  }, [location.search, categories, projects]);
-
-  useEffect(() => {
-    if (!location.hash) return;
-    const idFromHash = location.hash.replace("#", "");
-    const match = projects.find((p: any) => getId(p) === idFromHash);
-    if (match) {
-      setActiveProjectId(getId(match));
-      setActiveGroupId(match.groupId ?? getId(match));
-    }
-  }, [location.hash, projects]);
-
-  const activeProject = useMemo(() => {
-    const fromFiltered = filteredProjects.find((p: any) => getId(p) === activeProjectId);
-    if (fromFiltered) return fromFiltered;
-    return filteredProjects[0] ?? projects[0];
-  }, [filteredProjects, projects, activeProjectId]);
-
-  const activeGroup = useMemo(() => {
-    const match = groupedProjects.find((g) => g.groupId === activeGroupId);
-    if (match) return match;
-    return groupedProjects[0];
-  }, [groupedProjects, activeGroupId]);
+  const sortedProjects = useMemo(() => {
+    const bildstoeckli = projects.filter((p: any) => p.groupId === "bildstoeckli");
+    const rest = projects.filter((p: any) => p.groupId !== "bildstoeckli");
+    return [...bildstoeckli, ...rest];
+  }, [projects]);
 
   return (
     <main className="bg-transparent relative min-h-screen">
@@ -108,58 +44,8 @@ export default function AllProjectsPage() {
           </p>
         </div>
 
-        {/* Kategorien */}
-        {categories.length > 0 && (
-          <div className="flex flex-wrap justify-center gap-3 mb-10">
-            {categories.map((category: any) => (
-              <button
-                key={category.id}
-                onClick={() => {
-                  setActiveCategory(category.id);
-                  const first = (category.id === "all" ? projects : projects.filter((p: any) => p.serviceCategory === category.id))[0];
-                  if (first) setActiveProjectId(getId(first));
-                }}
-                className={`px-5 py-2 rounded-full border text-[11px] font-black uppercase tracking-[0.25em] transition-all ${
-                  activeCategory === category.id
-                    ? "bg-cyan-500/20 text-white border-cyan-500/50"
-                    : "bg-white/5 text-slate-400 border-white/10 hover:text-white hover:border-white/30"
-                }`}
-              >
-                {category.label}
-              </button>
-            ))}
-          </div>
-        )}
-
-        {/* Logo-Reiter */}
-        <div className="flex flex-wrap justify-center gap-4 mb-6">
-          {groupedProjects.map((group) => (
-            <button
-              key={group.groupId}
-              onClick={() => {
-                setActiveGroupId(group.groupId);
-                const first = group.items[0];
-                if (first) setActiveProjectId(getId(first));
-              }}
-              className={`flex items-center gap-3 rounded-full border px-5 py-3 backdrop-blur-md transition-all ${
-                group.groupId === activeGroup?.groupId
-                  ? "bg-white/10 border-cyan-500/50 text-white"
-                  : "bg-white/5 border-white/10 text-slate-400 hover:text-white hover:border-white/30"
-              }`}
-            >
-              {group.logo && (
-                <img src={group.logo} alt={`${group.label} Logo`} className="h-6 sm:h-7 w-auto object-contain" />
-              )}
-              <span className="text-[11px] font-black uppercase tracking-[0.2em]">
-                {group.label}
-              </span>
-            </button>
-          ))}
-        </div>
-
-        {activeProject && (
-          <div className="space-y-10">
-            {(activeGroup?.items?.length ? activeGroup.items : [activeProject]).map((project: any) => (
+        <div className="space-y-10">
+          {sortedProjects.map((project: any) => (
               <div key={getId(project)} className="grid lg:grid-cols-[1.2fr_1fr] gap-8 items-start">
                 <div className={"relative rounded-[2.5rem] overflow-hidden border border-white/10 bg-white/5 backdrop-blur-md " + (project.orientation === "portrait" ? "max-w-xl mx-auto" : "")}>
                   <div className={"relative w-full overflow-hidden " + (project.orientation === "portrait" ? "aspect-[9/16]" : "aspect-[16/9]")}>
@@ -253,8 +139,7 @@ export default function AllProjectsPage() {
                 </div>
               </div>
             ))}
-          </div>
-        )}
+        </div>
       </section>
     </main>
   );
