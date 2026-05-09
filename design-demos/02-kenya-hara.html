@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>TW Services — Demo 02 · Kenya Hara (Östlicher Minimalismus)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1B3A6B; --navy-soft:#3A5A8A;
+    --ink:#1A1F2A; --slate:#8A93A0;
+    --paper:#FAFAF7; --paper-warm:#F4F2EC; --line:#E8E5DD;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.7;font-weight:300;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  img,video{max-width:100%;display:block}
+  .container{max-width:1200px;margin:0 auto;padding:0 clamp(24px,5vw,64px)}
+  .container-wide{max-width:1480px;margin:0 auto;padding:0 clamp(24px,5vw,64px)}
+
+  /* nav — almost invisible */
+  .nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:28px 0;background:transparent;mix-blend-mode:difference}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between}
+  .brand{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:20px;letter-spacing:0.02em;color:#fff;display:flex;align-items:center;gap:12px}
+  .brand-mark{width:18px;height:18px;border:1px solid #fff;border-radius:50%;display:inline-block}
+  .nav-links{display:flex;gap:36px;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:#fff;font-weight:400}
+  .nav-links a{opacity:.85}
+  .nav-links a:hover{opacity:1}
+
+  /* hero — full bleed video, single line of poetry */
+  .hero{position:relative;height:100vh;min-height:680px;background:#000;overflow:hidden}
+  .hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.85}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,27,45,.35) 0%,transparent 30%,transparent 60%,rgba(15,27,45,.55) 100%)}
+  .hero-text{position:absolute;left:0;right:0;bottom:14vh;z-index:2;color:#fff;text-align:center;padding:0 24px}
+  .hero-eyebrow{font-size:11px;letter-spacing:0.32em;text-transform:uppercase;font-weight:400;opacity:.75;margin-bottom:36px;display:inline-flex;align-items:center;gap:14px}
+  .hero-eyebrow::before,.hero-eyebrow::after{content:"";width:24px;height:1px;background:rgba(255,255,255,.5)}
+  .hero-headline{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(36px,5.5vw,80px);line-height:1.1;letter-spacing:-0.005em;margin:0 0 18px;max-width:18ch;margin-inline:auto}
+  .hero-headline em{font-style:italic;font-weight:300}
+  .hero-sub{font-size:14px;letter-spacing:0.06em;opacity:.85;font-weight:300;max-width:46ch;margin:0 auto}
+  .scroll-hint{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);color:#fff;font-size:10px;letter-spacing:0.32em;text-transform:uppercase;opacity:.65;display:flex;flex-direction:column;align-items:center;gap:10px;z-index:2}
+  .scroll-hint::after{content:"";width:1px;height:32px;background:#fff;animation:line 2.4s ease-in-out infinite}
+  @keyframes line{0%,100%{transform:scaleY(.3);transform-origin:top}50%{transform:scaleY(1)}}
+
+  /* whitespace + ma — the silence between */
+  section{padding:clamp(96px,14vw,200px) 0}
+
+  .ma-intro{text-align:center}
+  .ma-intro .mark{font-family:'Cormorant Garamond',serif;font-size:32px;color:var(--navy);font-style:italic;margin-bottom:48px;font-weight:400}
+  .ma-intro h2{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(30px,3.6vw,52px);line-height:1.3;letter-spacing:-0.005em;margin:0 auto 32px;max-width:24ch;color:var(--ink)}
+  .ma-intro h2 em{font-style:italic;color:var(--navy)}
+  .ma-intro p{max-width:54ch;margin:0 auto;color:var(--slate);font-size:16px;line-height:1.85;font-weight:300}
+
+  /* services — vertical, breathing list */
+  .svc-block{display:grid;grid-template-columns:1fr 2fr;gap:clamp(40px,8vw,120px);align-items:start;padding:80px 0;border-top:1px solid var(--line)}
+  .svc-block:last-child{border-bottom:1px solid var(--line)}
+  .svc-num{font-family:'Cormorant Garamond',serif;font-size:14px;color:var(--slate);font-style:italic;letter-spacing:0.05em;font-weight:400}
+  .svc-title{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(28px,3vw,42px);line-height:1.15;letter-spacing:-0.005em;margin:6px 0 0;color:var(--ink)}
+  .svc-title em{font-style:italic;color:var(--navy)}
+  .svc-body{font-size:16px;color:var(--slate);line-height:1.85;font-weight:300;max-width:52ch}
+  .svc-body p{margin:0 0 16px}
+  .svc-meta{margin-top:28px;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink);font-weight:400;display:flex;gap:24px;flex-wrap:wrap}
+  .svc-meta span{display:flex;align-items:center;gap:8px}
+  .svc-meta span::before{content:"";width:5px;height:5px;background:var(--navy);border-radius:50%}
+
+  /* gallery — silent grid */
+  .gallery{background:var(--paper-warm)}
+  .gallery-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;margin-top:80px}
+  .g-item{position:relative;overflow:hidden;background:var(--ink)}
+  .g-item img{width:100%;height:100%;object-fit:cover;transition:opacity 1.2s ease,transform 1.6s cubic-bezier(.2,.7,.2,1)}
+  .g-item:hover img{opacity:.7;transform:scale(1.02)}
+  .g-item.tall{grid-column:span 4;aspect-ratio:3/4}
+  .g-item.wide{grid-column:span 8;aspect-ratio:4/3}
+  .g-item.full{grid-column:span 12;aspect-ratio:21/9}
+  .g-item.half{grid-column:span 6;aspect-ratio:4/3}
+  .g-cap{position:absolute;left:24px;bottom:24px;color:#fff;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;font-weight:400;text-shadow:0 1px 4px rgba(0,0,0,.4)}
+  .g-cap em{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;letter-spacing:0;text-transform:none;display:block;margin-bottom:4px;font-weight:400;color:#fff}
+
+  /* numbers — restrained */
+  .nums{text-align:center}
+  .nums-row{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;max-width:900px;margin:80px auto 0}
+  .num{}
+  .num-fig{font-family:'Cormorant Garamond',serif;font-size:clamp(52px,6vw,84px);font-weight:300;line-height:1;color:var(--navy);margin-bottom:18px}
+  .num-fig em{font-style:italic}
+  .num-lbl{font-size:13px;color:var(--slate);max-width:22ch;margin:0 auto;line-height:1.6;font-weight:300}
+
+  /* testimonial — single voice */
+  .testi{text-align:center;background:var(--paper-warm)}
+  .testi blockquote{font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:clamp(24px,2.6vw,38px);line-height:1.45;color:var(--ink);max-width:32ch;margin:0 auto 40px}
+  .testi cite{font-style:normal;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--slate);font-weight:400}
+
+  /* contact — invitation, not push */
+  .invite{text-align:center}
+  .invite h2{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(40px,5vw,72px);line-height:1.1;letter-spacing:-0.01em;margin:0 0 32px;color:var(--ink);max-width:18ch;margin-inline:auto}
+  .invite h2 em{font-style:italic;color:var(--navy)}
+  .invite p{max-width:46ch;margin:0 auto 48px;color:var(--slate);line-height:1.85}
+  .btn-invite{display:inline-block;padding:18px 36px;border:1px solid var(--ink);color:var(--ink);font-size:13px;letter-spacing:0.16em;text-transform:uppercase;font-weight:400;transition:all .4s}
+  .btn-invite:hover{background:var(--ink);color:var(--paper);letter-spacing:0.22em}
+
+  footer{padding:64px 0;border-top:1px solid var(--line);font-size:12px;letter-spacing:0.08em;color:var(--slate);font-weight:300}
+  .footer-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;align-items:center}
+  .footer-mark{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:var(--ink)}
+
+  @media (max-width:840px){
+    .svc-block{grid-template-columns:1fr;gap:24px;padding:56px 0}
+    .gallery-grid{grid-template-columns:1fr;gap:16px}
+    .g-item.tall,.g-item.wide,.g-item.full,.g-item.half{grid-column:span 1;aspect-ratio:4/3}
+    .nums-row{grid-template-columns:1fr;gap:48px}
+    .nav-links{display:none}
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <div class="brand"><span class="brand-mark"></span> TW Services</div>
+    <div class="nav-links">
+      <a>Werk</a><a>Philosophie</a><a>Kontakt</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <video src="../public/demovideos/demo_bildstoeckli_goldig_wohnen.mp4" autoplay muted loop playsinline></video>
+  <div class="hero-text">
+    <div class="hero-eyebrow">TW Services — Schmerikon</div>
+    <h1 class="hero-headline">Ein Gebäude entsteht zweimal —<br><em>einmal im Bild, dann in der Welt.</em></h1>
+    <p class="hero-sub">Bewegtbild und KI-Visualisierung für Bauträger im DACH-Raum.</p>
+  </div>
+  <div class="scroll-hint">Scroll</div>
+</header>
+
+<section>
+  <div class="container ma-intro">
+    <div class="mark">—</div>
+    <h2>Wir glauben, dass Architektur <em>erzählt</em> werden muss, bevor sie verstanden wird.</h2>
+    <p>Eine Wohnung ist keine Quadratmeterzahl, sondern ein zukünftiges Leben. Unsere Aufgabe ist es, dieses Leben sichtbar zu machen — präzise, ruhig, und genau so, wie sich der Käufer es vorstellen wollte, ohne es zu wissen.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="svc-block">
+      <div>
+        <div class="svc-num">— 一 —</div>
+        <h3 class="svc-title">Bewegtbild aus der <em>Höhe</em>.</h3>
+      </div>
+      <div class="svc-body">
+        <p>Drohnenaufnahmen sind nicht Spektakel, sondern Orientierung. Sie zeigen den Käufer, wo er später aufwacht — die Lage, das Licht, die Nachbarschaft. Wir filmen früh am Morgen, langsam, und schneiden mit Disziplin.</p>
+        <div class="svc-meta"><span>EASA-zertifiziert</span><span>6K · 25 fps</span><span>Eigener Pilot</span></div>
+      </div>
+    </div>
+    <div class="svc-block">
+      <div>
+        <div class="svc-num">— 二 —</div>
+        <h3 class="svc-title">Visualisierung mit <em>Substanz</em>.</h3>
+      </div>
+      <div class="svc-body">
+        <p>Aus Plänen entstehen Räume. Aus Räumen entsteht Stimmung. Wir nutzen KI-gestützte Workflows nicht, um schneller zu sein, sondern um in derselben Zeit feiner zu werden — Material, Schatten, Atmosphäre.</p>
+        <div class="svc-meta"><span>Photoreal</span><span>Tag &amp; Abend</span><span>Walkthroughs</span></div>
+      </div>
+    </div>
+    <div class="svc-block">
+      <div>
+        <div class="svc-num">— 三 —</div>
+        <h3 class="svc-title">Reichweite mit <em>Absicht</em>.</h3>
+      </div>
+      <div class="svc-body">
+        <p>Wir streuen nicht — wir zielen. Geo-spezifische Kampagnen auf Meta und YouTube, A/B-getestet, mit Pixel und CRM-Anbindung. Jeder Franken ist verfolgbar, jeder Lead qualifiziert.</p>
+        <div class="svc-meta"><span>Meta · YouTube</span><span>Geo-targeting</span><span>CRM-Sync</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery">
+  <div class="container-wide">
+    <div class="ma-intro">
+      <div class="mark">—</div>
+      <h2>Werk, das <em>Käufer findet</em>.</h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="g-item full">
+        <img alt="" src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=2000&q=80&auto=format" onerror="this.style.background='linear-gradient(135deg,#1B3A6B,#3A5A8A)';this.removeAttribute('src')"/>
+        <div class="g-cap"><em>Goldig Wohnen</em>Schmerikon · Bildstöckli AG</div>
+      </div>
+      <div class="g-item half">
+        <img alt="" src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1400&q=80&auto=format" onerror="this.style.background='linear-gradient(135deg,#142A4F,#1B3A6B)';this.removeAttribute('src')"/>
+        <div class="g-cap"><em>Eschenbach</em>PS Schubiger</div>
+      </div>
+      <div class="g-item half">
+        <img alt="" src="https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=1400&q=80&auto=format" onerror="this.style.background='linear-gradient(135deg,#3A5A8A,#142A4F)';this.removeAttribute('src')"/>
+        <div class="g-cap"><em>Herrengasse</em>PS Schubiger</div>
+      </div>
+      <div class="g-item tall">
+        <img alt="" src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1200&q=80&auto=format" onerror="this.style.background='linear-gradient(135deg,#6B7884,#1B3A6B)';this.removeAttribute('src')"/>
+        <div class="g-cap"><em>Wald</em>PS Schubiger</div>
+      </div>
+      <div class="g-item wide">
+        <img alt="" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=2000&q=80&auto=format" onerror="this.style.background='linear-gradient(135deg,#1B3A6B,#0F1B2D)';this.removeAttribute('src')"/>
+        <div class="g-cap"><em>Memora Moments</em>Studio-Produktion</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="nums">
+  <div class="container">
+    <div class="ma-intro" style="margin-bottom:0">
+      <div class="mark">—</div>
+      <h2>Was wir <em>messen</em>.</h2>
+    </div>
+    <div class="nums-row">
+      <div class="num"><div class="num-fig"><em>412</em>%</div><div class="num-lbl">durchschnittliche Lead-Steigerung</div></div>
+      <div class="num"><div class="num-fig"><em>14</em></div><div class="num-lbl">Tage von Briefing bis Kampagne</div></div>
+      <div class="num"><div class="num-fig"><em>37</em></div><div class="num-lbl">Bauträger im DACH-Raum</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="testi">
+  <div class="container">
+    <div class="mark" style="font-family:'Cormorant Garamond',serif;color:var(--navy);font-size:32px;font-style:italic;margin-bottom:48px;font-weight:400">”</div>
+    <blockquote>TW Services hat unser Projekt nicht beworben — sie haben es erzählt. Der Unterschied war messbar.</blockquote>
+    <cite>— Lukas Bildstöckli, Bildstöckli AG</cite>
+  </div>
+</section>
+
+<section>
+  <div class="container invite">
+    <h2>Sprechen wir <em>leise</em>.</h2>
+    <p>Ein Gespräch, dreissig Minuten, ohne Verpflichtung. Wir hören zu, prüfen das Projekt, und sagen ehrlich, ob wir der richtige Partner sind.</p>
+    <a class="btn-invite">Termin reservieren</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-row">
+    <span class="footer-mark">TW Services</span>
+    <span>Schmerikon, Schweiz · 2026</span>
+    <span>Impressum · Datenschutz</span>
+  </div>
+</footer>
+
+</body></html>

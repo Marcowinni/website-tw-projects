@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
-import { Button } from "./ui/button";
 import { useLanguage } from "../context/LanguageContext";
+import { Navbar } from "./Navbar";
 import { FooterSection } from "./FooterSection";
 
 export function ImprintPage() {
@@ -9,82 +9,72 @@ export function ImprintPage() {
 
   return (
     <>
-    {/* HINTERGRUND: Transparent, damit das Universum sichtbar bleibt */}
-    <div className="min-h-screen bg-transparent py-32 font-sans relative z-10">
-      <div className="container mx-auto px-4 max-w-3xl">
-        <Link to="/#about">
-          <Button variant="ghost" className="mb-8 pl-0 text-slate-400 hover:bg-transparent hover:text-cyan-500 transition-colors">
-             {/* @ts-ignore */}
-            <ArrowLeft className="mr-2 h-4 w-4" /> {t.legal.back_home}
-          </Button>
-        </Link>
-        
-        {/* CONTAINER: Glassmorphism statt weisser Box */}
-        <div className="bg-white/5 backdrop-blur-2xl p-10 rounded-[2rem] shadow-2xl border border-white/10">
+      <Navbar />
+      <main className="pt-32 pb-section-y">
+        <div className="container-x max-w-3xl">
+          <Link
+            to="/#about"
+            className="inline-flex items-center gap-2 text-sm text-slate2 hover:text-ink transition-colors mb-10 group"
+          >
+            <ArrowLeft className="w-4 h-4 transition-transform duration-300 group-hover:-translate-x-1" />
+            {/* @ts-ignore */}
+            {t.legal.back_home}
+          </Link>
+
           {/* @ts-ignore */}
-          <h1 className="text-3xl font-black text-white mb-8 tracking-tight">{t.legal.imprint_title}</h1>
-          
-          <div className="space-y-8 text-slate-300">
-            
-            {/* ADRESSE */}
-            <div>
+          <h1 className="font-display font-normal text-5xl lg:text-6xl text-ink tracking-tight leading-[1.05] mb-12">
+            {t.legal.imprint_title}
+          </h1>
+
+          <div className="space-y-10 text-slate2">
+            <section>
               {/* @ts-ignore */}
-              <h3 className="font-bold text-lg mb-2 text-white">{t.legal.company_name}</h3>
+              <h2 className="text-xs uppercase tracking-eyebrow font-semibold text-navy mb-3">Anbieter</h2>
+              {/* @ts-ignore */}
+              <p className="text-ink font-medium text-lg mb-1">{t.legal.company_name}</p>
               {/* @ts-ignore */}
               <p>{t.legal.address_line1}</p>
               {/* @ts-ignore */}
               <p>{t.legal.address_line2}</p>
-            </div>
+            </section>
 
-            {/* KONTAKT */}
-            <div>
+            <section className="pt-8 border-t border-line">
               {/* @ts-ignore */}
-              <h3 className="font-bold text-lg mb-2 text-white">{t.legal.contact_title}</h3>
+              <h2 className="text-xs uppercase tracking-eyebrow font-semibold text-navy mb-3">{t.legal.contact_title}</h2>
               {/* @ts-ignore */}
-              <p>E-Mail: {t.legal.email}</p>
-            </div>
+              <p>E-Mail: <a className="text-ink hover:underline" href={`mailto:${t.legal.email}`}>{t.legal.email}</a></p>
+            </section>
 
-            {/* HAFTUNGSAUSSCHLUSS */}
-            <div className="pt-6 border-t border-white/10">
+            <section className="pt-8 border-t border-line">
               {/* @ts-ignore */}
-              <h3 className="font-bold text-lg mb-2 text-white">{t.legal.disclaimer_title}</h3>
+              <h2 className="text-xs uppercase tracking-eyebrow font-semibold text-navy mb-3">{t.legal.disclaimer_title}</h2>
               {/* @ts-ignore */}
-              <p className="text-sm leading-relaxed text-slate-400 whitespace-pre-line">
-                {t.legal.disclaimer_text}
-              </p>
-            </div>
+              <p className="text-[15px] leading-relaxed whitespace-pre-line">{t.legal.disclaimer_text}</p>
+            </section>
 
-            {/* HAFTUNG FÜR LINKS */}
             {/* @ts-ignore */}
             {t.legal.links_title && (
-              <div className="pt-6 border-t border-white/10">
+              <section className="pt-8 border-t border-line">
                 {/* @ts-ignore */}
-                <h3 className="font-bold text-lg mb-2 text-white">{t.legal.links_title}</h3>
+                <h2 className="text-xs uppercase tracking-eyebrow font-semibold text-navy mb-3">{t.legal.links_title}</h2>
                 {/* @ts-ignore */}
-                <p className="text-sm leading-relaxed text-slate-400">
-                  {t.legal.links_text}
-                </p>
-              </div>
+                <p className="text-[15px] leading-relaxed">{t.legal.links_text}</p>
+              </section>
             )}
 
-            {/* URHEBERRECHTE */}
             {/* @ts-ignore */}
             {t.legal.copyright_title && (
-              <div className="pt-6 border-t border-white/10">
+              <section className="pt-8 border-t border-line">
                 {/* @ts-ignore */}
-                <h3 className="font-bold text-lg mb-2 text-white">{t.legal.copyright_title}</h3>
+                <h2 className="text-xs uppercase tracking-eyebrow font-semibold text-navy mb-3">{t.legal.copyright_title}</h2>
                 {/* @ts-ignore */}
-                <p className="text-sm leading-relaxed text-slate-400">
-                  {t.legal.copyright_text}
-                </p>
-              </div>
+                <p className="text-[15px] leading-relaxed">{t.legal.copyright_text}</p>
+              </section>
             )}
-
           </div>
         </div>
-      </div>
-    </div>
-    <FooterSection />
+      </main>
+      <FooterSection />
     </>
   );
 }

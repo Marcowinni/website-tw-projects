@@ -1,57 +1,163 @@
-import { useLanguage } from "../context/LanguageContext";
-import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { InfiniteSlider } from "./ui/infinite-slider";
-import { Button } from "./ui/button";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { useLanguage } from "../context/LanguageContext";
+import { useEffect, useRef, useState } from "react";
+
+type Reference = {
+  id: string;
+  name: string;
+  groupLabel: string;
+  description: string;
+  forWhom?: string;
+  result?: string;
+  video: string;
+  logo?: string;
+  tags?: string[];
+  orientation?: "portrait" | "landscape";
+};
+
+function ProjectCard({ project, featured = false }: { project: Reference; featured?: boolean }) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [hovered, setHovered] = useState(false);
+
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    if (hovered) v.play().catch(() => {});
+  }, [hovered]);
+
+  // unify aspect across cards — landscape 16:10 keeps drone-style framing readable
+  const aspect = project.orientation === "portrait" ? "aspect-[5/6]" : "aspect-[16/10]";
+
+  return (
+    <Link
+      to={`/projects#${project.id}`}
+      className={`group block ${featured ? "lg:col-span-7" : "lg:col-span-5"}`}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      {/* media — pure video, no overlay */}
+      <div className={`relative w-full overflow-hidden bg-cloud-deep border border-line ${aspect}`}>
+        <video
+          ref={videoRef}
+          src={project.video}
+          muted
+          loop
+          playsInline
+          autoPlay
+          preload="metadata"
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 ease-out-expo group-hover:scale-[1.03] gpu"
+        />
+        {project.logo && (
+          <div className="absolute top-4 left-4 z-10 bg-cloud px-3 py-1.5 shadow-soft">
+            <img
+              src={project.logo}
+              alt={project.groupLabel}
+              className="h-5 sm:h-6 w-auto object-contain"
+            />
+          </div>
+        )}
+      </div>
+
+      {/* caption — clean editorial line under card */}
+      <div className="mt-4 flex items-start justify-between gap-4">
+        <div className="min-w-0">
+          <div className="text-[10px] uppercase tracking-eyebrow font-semibold text-slate2 mb-1">
+            {project.tags?.join(" · ")}
+          </div>
+          <h3 className="font-display font-normal text-xl sm:text-2xl text-ink leading-tight tracking-tight">
+            {project.name}
+          </h3>
+          <p className="text-sm text-slate2 mt-1">{project.groupLabel}</p>
+        </div>
+        <ArrowUpRight className="w-5 h-5 text-ink shrink-0 mt-1 transition-transform duration-500 ease-out-expo group-hover:translate-x-1 group-hover:-translate-y-1" />
+      </div>
+    </Link>
+  );
+}
 
 export function ReferenceSection() {
   const { t } = useLanguage();
 
-  // Mapping der Logos zu den IDs in der AllProjectsPage
+  const projects: Reference[] = t.references.items as Reference[];
+  const featured = [
+    projects.find((p) => p.id === "bildstoeckli-goldig-wohnen"),
+    projects.find((p) => p.id === "psschubiger-projekt-schmerikon"),
+    projects.find((p) => p.id === "psschubiger-projekt-eschenbach"),
+    projects.find((p) => p.id === "psschubiger-herrengasse"),
+  ].filter(Boolean) as Reference[];
+
   const logos = [
-    { src: "/references/logo_psschubiger.png", alt: "P.S. Schubiger", id: "psschubiger", category: "video" },
-    { src: "/references/logo_bildstoeckli.jpg", alt: "Bildstoeckli AG", id: "bildstoeckli", category: "video" },
+    { src: "/references/logo_bildstoeckli.jpg", alt: "Bildstöckli AG" },
+    { src: "/references/logo_psschubiger.png", alt: "PS Schubiger" },
+    { src: "/references/logo_digitalsens.png", alt: "DigitalSens" },
+    { src: "/references/logo_memora.png", alt: "Memora Moments" },
   ];
 
   return (
-    <section id="references" className="w-full bg-transparent py-24 sm:py-32 md:py-40 px-4 sm:px-6 relative border-t border-white/5">
-      <div className="container mx-auto">
-        
-        {/* LOGO SLIDER - Jetzt klickbar */}
-        <div className="mb-20 sm:mb-28 md:mb-32">
-          <span className="text-cyan-500 font-black text-xs uppercase tracking-[0.4em] mb-16 block text-center">
-            {t.references.blue_title}
-          </span>
-
-          
-          <InfiniteSlider gap={100} duration={20} className="py-12">
-            {logos.map((logo, i) => (
-              // Jeder Logo-Eintrag linkt jetzt direkt zum Projekt-Anker
-              <Link 
-                key={i} 
-                to={`/projects?category=${logo.category}#${logo.id}`} 
-                className="mx-12 block transition-all hover:scale-110 active:scale-95 group"
-              >
-                <img 
-                  src={logo.src} 
-                  alt={logo.alt} 
-                  className="h-16 sm:h-20 md:h-24 lg:h-32 w-auto grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 drop-shadow-[0_0_20px_rgba(6,182,212,0)] group-hover:drop-shadow-[0_0_20px_rgba(6,182,212,0.3)]"
-                />
-              </Link>
-            ))}
-          </InfiniteSlider>
+    <section id="references" className="py-section-y border-t border-line">
+      <div className="container-x">
+        {/* head */}
+        <div className="grid grid-cols-12 gap-x-6 lg:gap-x-10 mb-16">
+          <div className="col-span-12 md:col-span-4">
+            <div className="eyebrow mb-4">
+              <span>— 02 / {t.references.blue_title}</span>
+            </div>
+          </div>
+          <div className="col-span-12 md:col-span-8 lg:col-span-7">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+              viewport={{ once: true, margin: "-80px" }}
+              className="font-display font-normal text-4xl sm:text-5xl lg:text-6xl text-ink leading-[1.05] tracking-tight text-balance"
+            >
+              Ausgewählte{" "}
+              <em className="not-italic font-display italic text-navy">Projekte</em>{" "}
+              aus der DACH-Region.
+            </motion.h2>
+          </div>
         </div>
 
-        {/* BUTTON ZU ALLEN PROJEKTEN */}
-        <div className="flex flex-col items-center gap-8">
-          <p className="text-xl sm:text-2xl text-slate-400 font-light italic text-center max-w-2xl">
+        {/* asymmetric grid — Goldig Wohnen featured + Schmerikon partner row 1; Eschenbach partner + Herrengasse featured row 2 */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-6 gap-y-10 lg:gap-x-8 lg:gap-y-12 mb-16 sm:mb-20">
+          {featured.slice(0, 2).map((p, i) => (
+            <ProjectCard project={p} featured={i === 0} key={p.id} />
+          ))}
+          {featured.slice(2, 4).map((p, i) => (
+            <ProjectCard project={p} featured={i === 1} key={p.id} />
+          ))}
+        </div>
+
+        {/* CTA strip */}
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 pt-10 border-t border-line">
+          <p className="text-slate2 text-base sm:text-lg max-w-xl">
             {t.references.subtitle}
           </p>
-          <Link to="/projects">
-            <Button className="bg-white text-black hover:bg-cyan-500 hover:text-white text-lg sm:text-xl px-10 sm:px-16 py-6 sm:py-10 rounded-full font-black uppercase tracking-widest shadow-2xl transition-all hover:scale-110 group">
-              {t.references.projekte_title} <ArrowRight className="ml-4 w-6 h-6 group-hover:translate-x-2 transition-transform" />
-            </Button>
+          <Link to="/projects" className="btn btn-primary group whitespace-nowrap">
+            {t.references.projekte_title}
+            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
+        </div>
+
+        {/* logo strip */}
+        <div className="mt-section-y-sm pt-12 border-t border-line">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 md:gap-12">
+            <span className="eyebrow shrink-0">
+              <span>Vertrauen von</span>
+            </span>
+            <div className="flex flex-wrap items-center justify-start md:justify-end gap-x-10 gap-y-6">
+              {logos.map((l) => (
+                <img
+                  key={l.alt}
+                  src={l.src}
+                  alt={l.alt}
+                  className="h-8 sm:h-9 w-auto object-contain img-mono"
+                />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

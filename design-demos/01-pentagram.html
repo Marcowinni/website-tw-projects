@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>TW Services — Demo 01 · Pentagram (Information Architecture)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1B3A6B; --navy-deep:#142A4F; --ink:#0F1B2D;
+    --slate:#6B7884; --line:#E3E6EB; --cloud:#F5F7FA; --paper:#FFFFFF;
+    --accent:#1B3A6B;
+    --max:1320px;
+    --gap:clamp(20px,3vw,48px);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .container{max-width:var(--max);margin:0 auto;padding:0 clamp(20px,4vw,48px)}
+  /* nav */
+  .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:600;letter-spacing:-0.01em}
+  .brand-mark{width:28px;height:28px;background:var(--navy);position:relative;clip-path:polygon(0 100%,30% 30%,50% 60%,75% 10%,100% 100%)}
+  .nav-links{display:flex;gap:28px;color:var(--slate);font-size:14px;font-weight:500}
+  .nav-links a:hover{color:var(--ink)}
+  .nav-cta{background:var(--ink);color:#fff;padding:10px 18px;border-radius:999px;font-size:13px;font-weight:500}
+  /* hero — editorial grid */
+  .hero{padding:clamp(40px,6vw,96px) 0 clamp(60px,8vw,120px);border-bottom:1px solid var(--line)}
+  .hero-grid{display:grid;grid-template-columns:7fr 5fr;gap:clamp(24px,4vw,72px);align-items:end}
+  .eyebrow{font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--slate);font-weight:600;margin-bottom:24px;display:flex;gap:14px;align-items:center}
+  .eyebrow::before{content:"";width:32px;height:1px;background:var(--ink)}
+  .h-display{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(44px,6.5vw,96px);line-height:0.98;letter-spacing:-0.02em;margin:0 0 28px;color:var(--ink)}
+  .h-display em{font-style:italic;color:var(--navy);font-weight:400}
+  .lede{font-size:clamp(17px,1.4vw,20px);line-height:1.55;color:var(--slate);max-width:54ch;margin:0 0 36px}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap}
+  .btn{padding:14px 22px;border-radius:0;font-size:14px;font-weight:500;border:1px solid var(--ink);transition:all .25s}
+  .btn-primary{background:var(--ink);color:#fff}
+  .btn-primary:hover{background:var(--navy)}
+  .btn-ghost{background:transparent;color:var(--ink)}
+  .btn-ghost:hover{background:var(--ink);color:#fff}
+  /* video card */
+  .video-card{position:relative;aspect-ratio:4/5;background:var(--cloud);overflow:hidden;border:1px solid var(--line)}
+  .video-card video{width:100%;height:100%;object-fit:cover;display:block}
+  .video-meta{position:absolute;left:20px;bottom:20px;right:20px;color:#fff;display:flex;justify-content:space-between;align-items:flex-end;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;text-shadow:0 1px 2px rgba(0,0,0,.4)}
+  .video-meta .lbl{opacity:.75}
+  .video-tag{position:absolute;top:18px;left:18px;background:#fff;color:var(--ink);padding:6px 10px;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600}
+  /* stat strip */
+  .stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:48px 0;background:var(--paper)}
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+  .stat{padding:0 8px;border-left:1px solid var(--line)}
+  .stat:first-child{border-left:0}
+  .stat-num{font-family:'Fraunces',serif;font-size:clamp(40px,4.5vw,64px);font-weight:400;color:var(--ink);line-height:1;letter-spacing:-0.02em;margin-bottom:8px}
+  .stat-num .small{font-size:0.55em;color:var(--navy);vertical-align:top;margin-left:4px}
+  .stat-label{font-size:13px;color:var(--slate);line-height:1.4;max-width:24ch}
+  /* section */
+  section{padding:clamp(64px,9vw,140px) 0}
+  .section-head{display:grid;grid-template-columns:1fr 2fr;gap:clamp(24px,4vw,72px);margin-bottom:64px;align-items:start}
+  .section-num{font-family:'Fraunces',serif;font-size:14px;color:var(--slate);letter-spacing:0.1em;font-weight:400}
+  .section-title{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(32px,4vw,52px);line-height:1.05;letter-spacing:-0.015em;margin:0;max-width:18ch}
+  .section-title em{font-style:italic;color:var(--navy)}
+  /* services list */
+  .svc-list{border-top:1px solid var(--ink)}
+  .svc{display:grid;grid-template-columns:80px 2fr 3fr 1fr;gap:32px;padding:32px 0;border-bottom:1px solid var(--line);align-items:start;transition:padding .3s}
+  .svc:hover{padding-left:8px;background:linear-gradient(90deg,var(--cloud),transparent)}
+  .svc-no{font-family:'Fraunces',serif;font-size:14px;color:var(--slate)}
+  .svc-name{font-size:22px;font-weight:500;letter-spacing:-0.01em;color:var(--ink);margin:0}
+  .svc-desc{color:var(--slate);font-size:15px;line-height:1.55;margin:4px 0 0}
+  .svc-link{font-size:13px;color:var(--ink);font-weight:500;text-align:right;border-bottom:1px solid var(--ink);align-self:start;justify-self:end;padding-bottom:2px}
+  /* case grid */
+  .cases{display:grid;grid-template-columns:repeat(12,1fr);gap:24px}
+  .case{position:relative;overflow:hidden;background:var(--cloud);border:1px solid var(--line)}
+  .case.lg{grid-column:span 7;aspect-ratio:5/4}
+  .case.sm{grid-column:span 5;aspect-ratio:5/4}
+  .case-img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+  .case:hover .case-img{transform:scale(1.04)}
+  .case-info{position:absolute;left:24px;right:24px;bottom:24px;color:#fff;display:flex;justify-content:space-between;align-items:flex-end;text-shadow:0 1px 4px rgba(0,0,0,.5)}
+  .case-info h3{margin:0 0 6px;font-family:'Fraunces',serif;font-size:24px;font-weight:400}
+  .case-info span{font-size:12px;letter-spacing:0.1em;text-transform:uppercase;opacity:.85}
+  .case-result{font-family:'Fraunces',serif;font-size:32px;font-weight:400;line-height:1}
+  /* logos */
+  .logos{padding:48px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--cloud)}
+  .logos-row{display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;color:var(--slate);font-family:'Fraunces',serif;font-size:22px;font-weight:400;letter-spacing:-0.01em}
+  .logos-row .lbl{font-family:'Inter',sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;font-weight:600;color:var(--ink)}
+  /* process */
+  .process{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--ink)}
+  .step{padding:36px 28px 36px 0;border-right:1px solid var(--line)}
+  .step:last-child{border-right:0}
+  .step-num{font-family:'Fraunces',serif;font-size:48px;font-weight:400;color:var(--navy);line-height:1;margin-bottom:16px}
+  .step h4{margin:0 0 8px;font-size:17px;font-weight:600}
+  .step p{margin:0;color:var(--slate);font-size:14px;line-height:1.55}
+  /* cta */
+  .cta-band{background:var(--ink);color:#fff;padding:clamp(64px,8vw,120px) 0}
+  .cta-band .h-display{color:#fff}
+  .cta-band .h-display em{color:#9DB6E0}
+  .cta-band .lede{color:#B8C2CE}
+  .cta-band .btn-primary{background:#fff;color:var(--ink);border-color:#fff}
+  .cta-band .btn-primary:hover{background:transparent;color:#fff}
+  /* footer */
+  footer{background:var(--paper);padding:48px 0;border-top:1px solid var(--line);font-size:13px;color:var(--slate)}
+  .footer-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px}
+  /* responsive */
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr}
+    .stats-grid{grid-template-columns:repeat(2,1fr)}
+    .stat{border-left:0;border-top:1px solid var(--line);padding:18px 0}
+    .stat:nth-child(1),.stat:nth-child(2){border-top:0}
+    .section-head{grid-template-columns:1fr}
+    .svc{grid-template-columns:48px 1fr;gap:16px}
+    .svc-desc{grid-column:2}
+    .svc-link{grid-column:2;justify-self:start}
+    .case.lg,.case.sm{grid-column:span 12}
+    .process{grid-template-columns:1fr 1fr}
+    .step{border-right:0;border-bottom:1px solid var(--line)}
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <div class="brand">
+      <span class="brand-mark"></span>
+      <span>TW Services</span>
+    </div>
+    <div class="nav-links">
+      <a>Werk</a><a>Leistungen</a><a>Prozess</a><a>Über uns</a>
+    </div>
+    <a class="nav-cta">Beratung anfragen →</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">B2B · Real Estate · KI-Marketing</div>
+        <h1 class="h-display">Wir verkaufen <em>Neubauprojekte</em>, bevor der Bagger kommt.</h1>
+        <p class="lede">TW Services produziert KI-gestützte Bewegtbild-Kampagnen für DACH-Bauträger. Drohnen-Aufnahmen, fotorealistische Visualisierungen und datengetriebene Performance-Distribution — aus einer Hand.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary">Kostenlose Projekt-Analyse</a>
+          <a class="btn btn-ghost">Cases ansehen →</a>
+        </div>
+      </div>
+      <div class="video-card">
+        <span class="video-tag">Live · Goldig Wohnen, Schmerikon</span>
+        <video src="../public/demovideos/demo_bildstoeckli_goldig_wohnen.mp4" autoplay muted loop playsinline></video>
+        <div class="video-meta"><span class="lbl">Kunde</span><span>Bildstöckli AG</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="stats">
+  <div class="container stats-grid">
+    <div class="stat"><div class="stat-num">412<span class="small">%</span></div><div class="stat-label">durchschnittliche Steigerung qualifizierter Leads</div></div>
+    <div class="stat"><div class="stat-num">37</div><div class="stat-label">Bauträger im DACH-Raum begleitet</div></div>
+    <div class="stat"><div class="stat-num">14<span class="small">d</span></div><div class="stat-label">vom Kick-off zur ersten Kampagne live</div></div>
+    <div class="stat"><div class="stat-num">CH<span class="small">·DE·AT</span></div><div class="stat-label">grenzüberschreitende Produktion und Distribution</div></div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div class="section-num">— 01 / Leistungen</div>
+      <h2 class="section-title">Vier Disziplinen, ein <em>messbares</em> Resultat: Verkaufte Einheiten.</h2>
+    </div>
+    <div class="svc-list">
+      <div class="svc">
+        <div class="svc-no">N° 01</div>
+        <div><h3 class="svc-name">Drohnen- &amp; Filmproduktion</h3></div>
+        <p class="svc-desc">Cineastische Luftaufnahmen, Site-Sweeps und Lifestyle-Footage. EASA-zertifiziert, eigener Pilot, 6K-Workflow.</p>
+        <a class="svc-link">Details</a>
+      </div>
+      <div class="svc">
+        <div class="svc-no">N° 02</div>
+        <div><h3 class="svc-name">KI-Visualisierung &amp; Renderings</h3></div>
+        <p class="svc-desc">Aus Plänen entstehen photorealistische Aussenansichten, Innenraum-Stagings und animierte Walkthroughs in Tagen statt Wochen.</p>
+        <a class="svc-link">Details</a>
+      </div>
+      <div class="svc">
+        <div class="svc-no">N° 03</div>
+        <div><h3 class="svc-name">Performance-Distribution</h3></div>
+        <p class="svc-desc">Meta, YouTube, Native-Ads — geo-fenced auf Ihren Einzugsbereich, A/B-getestet, mit CRM-Anbindung für sauberes Lead-Tracking.</p>
+        <a class="svc-link">Details</a>
+      </div>
+      <div class="svc">
+        <div class="svc-no">N° 04</div>
+        <div><h3 class="svc-name">Vermarktungs-Strategie</h3></div>
+        <p class="svc-desc">Positionierung, Storyboard, Mediaplan. Wir denken in Käuferpersonen — nicht in Quadratmetern.</p>
+        <a class="svc-link">Details</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div class="section-num">— 02 / Werk</div>
+      <h2 class="section-title">Ausgewählte <em>Projekte</em> aus der DACH-Region.</h2>
+    </div>
+    <div class="cases">
+      <div class="case lg">
+        <img class="case-img" alt="" src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1400&q=80&auto=format" onerror="this.style.background='linear-gradient(135deg,#1B3A6B,#6B7884)';this.removeAttribute('src')"/>
+        <div class="case-info">
+          <div><h3>Goldig Wohnen</h3><span>Schmerikon · Bildstöckli AG · 24 Einheiten</span></div>
+          <div class="case-result">+512%</div>
+        </div>
+      </div>
+      <div class="case sm">
+        <img class="case-img" alt="" src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1200&q=80&auto=format" onerror="this.style.background='linear-gradient(135deg,#142A4F,#1B3A6B)';this.removeAttribute('src')"/>
+        <div class="case-info">
+          <div><h3>Projekt Eschenbach</h3><span>PS Schubiger · 12 Einheiten</span></div>
+          <div class="case-result">+318%</div>
+        </div>
+      </div>
+      <div class="case sm">
+        <img class="case-img" alt="" src="https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=1200&q=80&auto=format" onerror="this.style.background='linear-gradient(135deg,#6B7884,#142A4F)';this.removeAttribute('src')"/>
+        <div class="case-info">
+          <div><h3>Herrengasse</h3><span>PS Schubiger · 8 Einheiten</span></div>
+          <div class="case-result">+241%</div>
+        </div>
+      </div>
+      <div class="case lg">
+        <img class="case-img" alt="" src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1400&q=80&auto=format" onerror="this.style.background='linear-gradient(135deg,#1B3A6B,#0F1B2D)';this.removeAttribute('src')"/>
+        <div class="case-info">
+          <div><h3>Projekt Wald</h3><span>PS Schubiger · 18 Einheiten</span></div>
+          <div class="case-result">+387%</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="logos">
+  <div class="container logos-row">
+    <span class="lbl">Vertrauen von</span>
+    <span>Bildstöckli AG</span>
+    <span>PS Schubiger</span>
+    <span>DigitalSens</span>
+    <span>Memora Moments</span>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div class="section-num">— 03 / Prozess</div>
+      <h2 class="section-title">Vom <em>Briefing</em> zur ersten verkauften Einheit.</h2>
+    </div>
+    <div class="process">
+      <div class="step"><div class="step-num">01</div><h4>Discovery</h4><p>USP-Workshop, Zielgruppen-Definition, Mediaplan. 5 Tage.</p></div>
+      <div class="step"><div class="step-num">02</div><h4>Produktion</h4><p>Drohne, Renderings, Voiceover, Schnitt. 10–14 Tage.</p></div>
+      <div class="step"><div class="step-num">03</div><h4>Launch</h4><p>Geo-targeted auf Meta &amp; YouTube. Pixel + CRM live.</p></div>
+      <div class="step"><div class="step-num">04</div><h4>Optimierung</h4><p>Wöchentliches Reporting. Iteration bis CAC stabil ist.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container">
+    <div class="hero-grid" style="align-items:center">
+      <div>
+        <div class="eyebrow" style="color:#9DB6E0">— Kostenfreies Erstgespräch</div>
+        <h2 class="h-display">Ihr nächstes Projekt verdient mehr als <em>Inserate</em>.</h2>
+        <p class="lede">30 Minuten. Wir analysieren Ihren Vermarktungs-Status und zeigen, was mit KI-gestütztem Bewegtbild realistisch erreichbar ist.</p>
+        <a class="btn btn-primary">Termin reservieren →</a>
+      </div>
+      <div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-row">
+    <span>© 2026 TW Services AG · Schmerikon, Schweiz</span>
+    <span>Impressum · Datenschutz · AGB</span>
+  </div>
+</footer>
+
+</body></html>
