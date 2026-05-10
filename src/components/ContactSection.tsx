@@ -3,7 +3,7 @@ import { Mail, Phone, MessageCircle, ArrowUpRight } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 
 const contact = {
-  email: "tillandwin@gmail.com",
+  email: "info@tw-services.ch",
   phone: "+41 79 943 26 30",
   whatsappLink: "https://wa.me/41799432630",
 };
@@ -74,7 +74,7 @@ export function ContactSection() {
                   Erstgespräch
                 </div>
                 <p className="text-cloud/90 text-[15px] leading-relaxed">
-                  30 Minuten, kostenfrei. Wir analysieren Ihren Vermarktungs-Status und zeigen, was mit KI-Bewegtbild realistisch erreichbar ist.
+                  15–30 Minuten, kostenfrei. Wir analysieren Ihren Vermarktungs-Status und zeigen, was mit KI-Bewegtbild realistisch erreichbar ist.
                 </p>
               </div>
               <div className="flex items-start gap-4 pb-4 border-b border-cloud/10">

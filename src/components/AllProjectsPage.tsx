@@ -73,40 +73,37 @@ export default function AllProjectsPage() {
                   id={project.id}
                   className="grid grid-cols-12 gap-x-6 gap-y-8 lg:gap-x-10 items-start"
                 >
-                  {/* video */}
+                  {/* video — clean frame, video itself is the visual */}
                   <div className="col-span-12 lg:col-span-7">
-                    <div className="relative bg-ink overflow-hidden border border-line">
-                      <div
-                        className={`relative w-full overflow-hidden ${
-                          project.orientation === "portrait" ? "aspect-[9/16] max-w-md mx-auto" : "aspect-[16/9]"
-                        }`}
+                    <div
+                      className={`relative w-full overflow-hidden border border-line ${
+                        project.orientation === "portrait" ? "aspect-[9/16] max-w-sm" : "aspect-[16/9]"
+                      }`}
+                    >
+                      <video
+                        key={project.video}
+                        muted={muted}
+                        loop
+                        playsInline
+                        autoPlay
+                        preload="metadata"
+                        className="absolute inset-0 w-full h-full object-cover bg-cloud-deep"
                       >
-                        <video
-                          key={project.video}
-                          muted={muted}
-                          loop
-                          playsInline
-                          autoPlay
-                          preload="metadata"
-                          className="w-full h-full object-cover"
-                        >
-                          <source src={project.video} type="video/mp4" />
-                        </video>
-                        <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-transparent pointer-events-none" />
-                        {project.logo && (
-                          <div className="absolute top-4 left-4 z-10 bg-cloud px-3 py-2 shadow-soft">
-                            <img src={project.logo} alt="" className="h-7 w-auto object-contain" />
-                          </div>
-                        )}
-                        <button
-                          type="button"
-                          onClick={() => setMutedById((p) => ({ ...p, [pid]: !muted }))}
-                          aria-label={muted ? "Ton einschalten" : "Ton ausschalten"}
-                          className="absolute top-4 right-4 z-10 bg-cloud/90 backdrop-blur-sm text-ink p-2.5 rounded-full hover:bg-cloud transition-all duration-300"
-                        >
-                          {muted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
-                        </button>
-                      </div>
+                        <source src={project.video} type="video/mp4" />
+                      </video>
+                      {project.logo && (
+                        <div className="absolute top-4 left-4 z-10 bg-cloud px-3 py-1.5 shadow-soft">
+                          <img src={project.logo} alt="" className="h-6 w-auto object-contain" />
+                        </div>
+                      )}
+                      <button
+                        type="button"
+                        onClick={() => setMutedById((p) => ({ ...p, [pid]: !muted }))}
+                        aria-label={muted ? "Ton einschalten" : "Ton ausschalten"}
+                        className="absolute top-4 right-4 z-10 bg-cloud/90 backdrop-blur-sm text-ink p-2.5 rounded-full hover:bg-cloud transition-all duration-300"
+                      >
+                        {muted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
+                      </button>
                     </div>
                   </div>
 

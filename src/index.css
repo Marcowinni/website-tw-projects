@@ -35,9 +35,9 @@
     color: rgb(var(--color-cloud));
   }
 
-  /* anchor scroll offset for sticky nav */
+  /* anchor scroll offset for sticky nav (top-strip + nav) */
   section[id] {
-    scroll-margin-top: 88px;
+    scroll-margin-top: 120px;
   }
 
   /* focus-visible — accessible, brand-tied */

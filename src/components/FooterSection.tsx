@@ -27,25 +27,28 @@ export function FooterSection() {
               <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-1">→</span>
             </a>
 
-            {/* sister site cross-link */}
+            {/* sister company cross-link */}
             <a
               href="https://www.tw-p.ch"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-8 inline-flex items-start gap-3 max-w-md group border-t border-line pt-6 hover:border-ink transition-colors duration-300"
+              className="mt-10 block group border-t border-line pt-6 hover:border-ink transition-colors duration-300"
             >
-              <span className="text-[10px] uppercase tracking-eyebrow font-semibold text-navy mt-1 shrink-0">
-                Schwesterseite
-              </span>
-              <span className="flex-1">
-                <span className="block font-display italic text-base text-ink leading-snug">
-                  TW Projects — Automation &amp; KI-Prozesse
+              <div className="text-[10px] uppercase tracking-eyebrow font-semibold text-navy mb-2">
+                TW Projects · Schwesterunternehmen
+              </div>
+              <div className="flex items-start gap-4">
+                <p className="font-display italic text-lg text-ink leading-snug max-w-md flex-1">
+                  Möchten Sie Ihre Geschäftsprozesse mit KI effizienter gestalten?
+                </p>
+                <ArrowUpRight className="w-5 h-5 text-ink shrink-0 mt-1 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+              </div>
+              <div className="mt-3 inline-flex items-center gap-2 text-sm text-slate2 group-hover:text-ink transition-colors">
+                <span>Automation &amp; KI-Workflows entdecken auf</span>
+                <span className="font-medium text-ink underline underline-offset-2 decoration-line group-hover:decoration-ink">
+                  tw-p.ch
                 </span>
-                <span className="block text-xs text-slate2 mt-0.5">
-                  www.tw-p.ch
-                </span>
-              </span>
-              <ArrowUpRight className="w-4 h-4 text-ink shrink-0 mt-1 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </div>
             </a>
           </div>
 
@@ -69,8 +72,8 @@ export function FooterSection() {
             </h4>
             <ul className="space-y-3 text-sm text-slate2">
               <li>
-                <a href="mailto:tillandwin@gmail.com" className="hover:text-ink transition-colors inline-flex items-center gap-2">
-                  <Mail className="w-3.5 h-3.5" /> tillandwin@gmail.com
+                <a href="mailto:info@tw-services.ch" className="hover:text-ink transition-colors inline-flex items-center gap-2">
+                  <Mail className="w-3.5 h-3.5" /> info@tw-services.ch
                 </a>
               </li>
               <li>

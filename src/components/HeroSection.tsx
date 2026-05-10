@@ -17,7 +17,7 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section className="relative pt-[120px] sm:pt-[140px] pb-section-y overflow-hidden">
+    <section className="relative pt-[140px] sm:pt-[160px] pb-section-y overflow-hidden">
       {/* subtle grid backdrop */}
       <div
         aria-hidden

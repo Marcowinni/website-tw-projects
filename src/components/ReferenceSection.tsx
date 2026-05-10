@@ -88,13 +88,6 @@ export function ReferenceSection() {
     projects.find((p) => p.id === "psschubiger-herrengasse"),
   ].filter(Boolean) as Reference[];
 
-  const logos = [
-    { src: "/references/logo_bildstoeckli.jpg", alt: "Bildstöckli AG" },
-    { src: "/references/logo_psschubiger.png", alt: "PS Schubiger" },
-    { src: "/references/logo_digitalsens.png", alt: "DigitalSens" },
-    { src: "/references/logo_memora.png", alt: "Memora Moments" },
-  ];
-
   return (
     <section id="references" className="py-section-y border-t border-line">
       <div className="container-x">
@@ -139,25 +132,6 @@ export function ReferenceSection() {
             {t.references.projekte_title}
             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
-        </div>
-
-        {/* logo strip */}
-        <div className="mt-section-y-sm pt-12 border-t border-line">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 md:gap-12">
-            <span className="eyebrow shrink-0">
-              <span>Vertrauen von</span>
-            </span>
-            <div className="flex flex-wrap items-center justify-start md:justify-end gap-x-10 gap-y-6">
-              {logos.map((l) => (
-                <img
-                  key={l.alt}
-                  src={l.src}
-                  alt={l.alt}
-                  className="h-8 sm:h-9 w-auto object-contain img-mono"
-                />
-              ))}
-            </div>
-          </div>
         </div>
       </div>
     </section>

@@ -35,8 +35,8 @@
     "cta": "Erstberatung vereinbaren"
   },
   "hero": {
-    "title_main": "Wir strukturieren Ihr Angebot",
-    "title_highlight": "mit KI & Strategie",
+    "title_main": "Wir verkaufen Neubauprojekte,",
+    "title_highlight": "bevor der Bagger kommt",
     "subtitle_main": "Gehen sie Mit KI",
     "subtitle_sub": "oder gehen Sie,",
     "subtitle_highlight": "mit KI."
@@ -50,7 +50,7 @@
     "premium-werbefilme": {
       "title": "Premium-Werbefilme",
       "tagline": "Reiner Werbefilm für Neubauprojekte",
-      "subtitle": "Cineastische Werbefilme für Neubauprojekte und Überbauungen –\nIhr Projekt in 45 Sekunden klar, emotional und begehrenswert auf den Punkt gebracht.",
+      "subtitle": "Cineastische Werbefilme für Neubauprojekte und Überbauungen –\nIhr Projekt in 45-60 Sekunden klar, emotional und begehrenswert auf den Punkt gebracht.",
       "benefitTitle": "Ihr Ergebnis",
       "benefitText": "Ein hochwertiger, eigenständiger Werbefilm, der Ihr Projekt in unter einer Minute so klar und begehrenswert präsentiert, dass sich Interessenten selbst qualifizieren – mehr passende Anfragen, kürzere Erklärschleifen.",
       "valueTitle": "Mehrwert",
@@ -59,9 +59,8 @@
       "positioningText": "Projektentwickler, Bauträger und Vermarktungs-Verantwortliche von Neubauprojekten und Überbauungen im DACH-Raum.",
       "whyTitle": "Warum wir hier Spezialist sind",
       "whyBullets": [
-        "DROHNE, KI-VISUALISIERUNG UND STORY AUS EINER HAND",
-        "EIGENER PILOT, EASA-ZERTIFIZIERT, 6K-WORKFLOW",
-        "ERPROBTE STORY-STRUKTUR: PROBLEM → LÖSUNG → BEWEIS → CTA"
+        "KI-VISUALISIERUNG UND STORY AUS EINER HAND",
+        "EFFIZIENTER WORKFLOW"
       ],
       "includesTitle": "Sie erhalten",
       "includesBullets": [
@@ -89,7 +88,7 @@
       "benefitTitle": "Ihr Ergebnis",
       "benefitText": "Ihr Projekt wird sichtbar, bevor es gebaut ist – in einer Bildqualität, die Käufer überzeugt und Stakeholder mitnimmt.",
       "valueTitle": "Mehrwert",
-      "valueText": "Klassische Renderings dauern Wochen und kosten ein Vielfaches. KI-gestützte Workflows liefern in Tagen vergleichbare Qualität – mit gezielter manueller Nachbearbeitung dort, wo es zählt.\n\nWir kombinieren beides: KI für Tempo und Iteration, Handarbeit für Material, Licht und Atmosphäre.",
+      "valueText": "Klassische Renderings dauern Wochen und kosten ein Vielfaches. KI-gestützte Workflows liefern in Tagen dieselbe Qualität – mit gezielter manueller Nachbearbeitung dort, wo es zählt.\n\nWir kombinieren beides: KI für Tempo und Iteration, Handarbeit für Material, Licht und Atmosphäre.",
       "positioningTitle": "Für wen",
       "positioningText": "Projektentwickler und Bauträger, die früh in der Vermarktung Bildmaterial brauchen – für Webseite, Inserate, Investorenpräsentation oder Eingabe.",
       "whyTitle": "Warum wir hier Spezialist sind",
@@ -119,10 +118,10 @@
     },
     "time-to-sell": {
       "title": "Time-to-Sell Video System",
-      "tagline": "Setup + laufendes Kampagnenmanagement",
+      "tagline": "Setup Werbefilm + Kampagnenmanagement",
       "subtitle": "Ein vollständiges video-basiertes Vermarktungssystem.\nVom Werbefilm über Lead-Funnel bis zur laufenden Kampagnen-Optimierung.",
       "benefitTitle": "Ihr Ergebnis",
-      "benefitText": "Ihr werdet unabhängig vom Portal-Algorithmus. Ihr Projekt wird in 60 Sekunden so klar und begehrenswert erklärt, dass sich Interessenten selbst qualifizieren – mehr passende Anfragen, kürzere Vermarktungsdauer und spürbar weniger Druck im Alltag.",
+      "benefitText": "Ihr werdet unabhängig vom Portal-Algorithmus. Ihr Projekt wird in 45-60 Sekunden so klar und begehrenswert erklärt, dass sich Interessenten selbst qualifizieren – mehr passende Anfragen, kürzere Vermarktungsdauer und spürbar weniger Druck im Alltag.",
       "valueTitle": "Mehrwert",
       "valueText": "Hochpreisige Neubauprojekte bleiben oft zu lange am Markt, weil Unsicherheit und Komplexität Kaufentscheide bremsen.\n\nWir bauen ein System, das Käufer und interne Stakeholder schnell zur Klarheit führt: Premium-Werbefilm, Lead-Funnel mit Vorqualifizierung, automatisierter Versand der Projektunterlagen und laufende Optimierung von Hooks und Creatives auf Meta und YouTube.",
       "positioningTitle": "Für wen",
@@ -290,16 +289,16 @@
         "groupId": "bildstoeckli",
         "groupLabel": "Bildstöckli AG",
         "slug": "bildstoeckli-goldig-wohnen",
-        "description": "Projektvideo für Bildstöckli GmbH – Goldig Wohnen. Fokus auf hochwertiges Wohnen und visuelle Präsentation.",
-        "forWhom": "Für Immobilienprojekte und hochwertige Wohnangebote",
-        "deliverable": "Projektvideo mit Storyboard und klarer CTA",
-        "result": "Mehr qualifizierte Anfragen für das Wohnprojekt",
+        "description": "Premium-Werbefilm und Time-to-Sell Video System für die Überbauung Goldig Wohnen in Goldingen.",
+        "forWhom": "Bauträger und Projektentwickler hochwertiger Neubauprojekte im DACH-Raum",
+        "deliverable": "Projektvideo mit Storyboard und klarer CTA – sowie das vollständige Time-to-Sell Video System mit Lead-Funnel und laufender Kampagnenoptimierung",
+        "result": "Mehr qualifizierte Anfragen, kürzere Vermarktungsdauer für das Wohnprojekt",
         "link": "/#contact",
         "ctaLabel": "Kontakt aufnehmen",
         "logo": "/references/logo_bildstoeckli.jpg",
         "video": "/demovideos/demo_bildstoeckli_goldig_wohnen.mp4",
         "serviceCategory": "video",
-        "tags": ["Marketing Video", "Immobilien"],
+        "tags": ["Premium-Werbefilm", "Time-to-Sell System"],
         "orientation": "portrait"
       }
     ]
@@ -311,7 +310,7 @@
     "items": []
   },
   "footer": {
-    "description": "Ihr Projekt in 45 Sekunden klar – mehr qualifizierte Anfragen, weniger Erklär-Aufwand im Vertrieb.",
+    "description": "Ihr Projekt in 45-60 Sekunden klar – mehr qualifizierte Anfragen, weniger Erklär-Aufwand im Vertrieb.",
     "company": "Rechtliches",
     "rights": "Alle Rechte vorbehalten.",
     "links": {
@@ -327,7 +326,7 @@
     "company_name": "TW Projects GmbH",
     "address_line1": "Breitenmattstrasse 69",
     "address_line2": "8635 Dürnten, Schweiz",
-    "email": "tillandwin@gmail.com",
+    "email": "info@tw-services.ch",
     "contact_title": "Kontakt",
     "commercial_register": "",
     "vat_id": "",
