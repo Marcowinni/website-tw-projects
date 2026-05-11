@@ -41,7 +41,7 @@ export function Navbar() {
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-2 text-[11px] sm:text-xs text-cloud/85 hover:text-cloud transition-colors duration-300"
           >
-            <span className="hidden sm:inline">Geschäftsprozesse mit KI effizienter gestalten — </span>
+            <span className="hidden sm:inline">Mit KI effizienter arbeiten — </span>
             <span className="sm:hidden">KI-Workflows entdecken — </span>
             <span className="font-medium underline underline-offset-2 decoration-cloud/30 group-hover:decoration-cloud">
               tw-p.ch

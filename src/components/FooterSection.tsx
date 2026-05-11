@@ -35,16 +35,16 @@ export function FooterSection() {
               className="mt-10 block group border-t border-line pt-6 hover:border-ink transition-colors duration-300"
             >
               <div className="text-[10px] uppercase tracking-eyebrow font-semibold text-navy mb-2">
-                TW Projects · Schwesterunternehmen
+                TW Projects
               </div>
               <div className="flex items-start gap-4">
                 <p className="font-display italic text-lg text-ink leading-snug max-w-md flex-1">
-                  Möchten Sie Ihre Geschäftsprozesse mit KI effizienter gestalten?
+                  Möchten Sie mit KI effizienter arbeiten?
                 </p>
                 <ArrowUpRight className="w-5 h-5 text-ink shrink-0 mt-1 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
               </div>
               <div className="mt-3 inline-flex items-center gap-2 text-sm text-slate2 group-hover:text-ink transition-colors">
-                <span>Automation &amp; KI-Workflows entdecken auf</span>
+                <span>Mehr erfahren auf</span>
                 <span className="font-medium text-ink underline underline-offset-2 decoration-line group-hover:decoration-ink">
                   tw-p.ch
                 </span>
