@@ -77,8 +77,8 @@ export function FooterSection() {
                 </a>
               </li>
               <li>
-                <a href="tel:+41799432630" className="hover:text-ink transition-colors inline-flex items-center gap-2">
-                  <Phone className="w-3.5 h-3.5" /> +41 79 943 26 30
+                <a href="tel:+41445056372" className="hover:text-ink transition-colors inline-flex items-center gap-2">
+                  <Phone className="w-3.5 h-3.5" /> +41 44 505 63 72
                 </a>
               </li>
               <li className="inline-flex items-start gap-2 text-slate2">
