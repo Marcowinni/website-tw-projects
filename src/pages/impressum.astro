@@ -1,0 +1,13 @@
+---
+import Layout from '../layouts/Layout.astro'
+import { ImprintPage } from '../components/ImprintPage'
+---
+
+<Layout
+  title="Impressum — TW Services"
+  description="Impressum der TW Services (Marke der TW Projects GmbH), Dürnten ZH."
+  canonical="https://www.tw-services.ch/impressum"
+  robots="noindex,follow"
+>
+  <ImprintPage client:load />
+</Layout>

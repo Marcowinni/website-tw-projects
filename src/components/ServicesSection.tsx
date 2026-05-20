@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+
 import { ArrowUpRight } from "lucide-react";
-import { useLanguage } from "../context/LanguageContext";
+import { useLanguage } from "../lib/i18n";
 
 type ServiceItem = {
   id: string;
@@ -62,8 +62,8 @@ export function ServicesSection() {
               viewport={{ once: true, margin: "-60px" }}
               className="border-b border-line group"
             >
-              <Link
-                to={`/services/${svc.id}`}
+              <a
+                href={`/services/${svc.id}`}
                 className="grid grid-cols-12 gap-x-6 lg:gap-x-10 py-8 lg:py-10 items-start transition-all duration-500 ease-out-quart hover:bg-cloud-warm hover:px-3 -mx-0 hover:-mx-3"
               >
                 <div className="col-span-2 md:col-span-1">
@@ -87,7 +87,7 @@ export function ServicesSection() {
                     <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </span>
                 </div>
-              </Link>
+              </a>
             </motion.div>
           ))}
         </div>

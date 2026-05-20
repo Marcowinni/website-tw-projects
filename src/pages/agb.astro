@@ -1,0 +1,13 @@
+---
+import Layout from '../layouts/Layout.astro'
+import { TermsPage } from '../components/TermsPage'
+---
+
+<Layout
+  title="AGB — TW Services"
+  description="Allgemeine Geschäftsbedingungen der TW Services (Marke der TW Projects GmbH)."
+  canonical="https://www.tw-services.ch/agb"
+  robots="noindex,follow"
+>
+  <TermsPage client:load />
+</Layout>

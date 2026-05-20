@@ -1,6 +1,6 @@
-import { Link, useParams } from "react-router-dom";
+
 import { ArrowLeft, ArrowRight, Check } from "lucide-react";
-import { useLanguage } from "../context/LanguageContext";
+import { useLanguage } from "../lib/i18n";
 import { Navbar } from "./Navbar";
 import { FooterSection } from "./FooterSection";
 
@@ -12,8 +12,7 @@ type Phase = {
   bullets: string[];
 };
 
-export function ServiceDetailPage() {
-  const { id } = useParams<{ id: string }>();
+export function ServiceDetailPage({ id }: { id: string }) {
   const { t } = useLanguage();
 
   // @ts-ignore
@@ -24,9 +23,9 @@ export function ServiceDetailPage() {
       <>
         <Navbar />
         <main className="pt-40 pb-section-y container-x">
-          <Link to="/#services" className="inline-flex items-center gap-2 text-sm text-slate2 hover:text-ink mb-10">
+          <a href="/#services" className="inline-flex items-center gap-2 text-sm text-slate2 hover:text-ink mb-10">
             <ArrowLeft className="w-4 h-4" /> Zurück
-          </Link>
+          </a>
           <h1 className="font-display text-4xl text-ink">Service nicht gefunden.</h1>
         </main>
         <FooterSection />
@@ -41,13 +40,13 @@ export function ServiceDetailPage() {
       <Navbar />
       <main className="pt-32 pb-section-y">
         <div className="container-x max-w-content">
-          <Link
-            to="/#services"
+          <a
+            href="/#services"
             className="inline-flex items-center gap-2 text-sm text-slate2 hover:text-ink transition-colors mb-10 group"
           >
             <ArrowLeft className="w-4 h-4 transition-transform duration-300 group-hover:-translate-x-1" />
             Zurück zu Services
-          </Link>
+          </a>
 
           {/* hero */}
           <div className="grid grid-cols-12 gap-x-6 lg:gap-x-10 mb-16 sm:mb-20">
@@ -201,14 +200,14 @@ export function ServiceDetailPage() {
 
           {/* CTA */}
           <div className="border-t border-line pt-12 flex flex-col sm:flex-row gap-4">
-            <Link to={service.ctaPrimaryLink} className="btn btn-primary group">
+            <a href={service.ctaPrimaryLink} className="btn btn-primary group">
               {service.ctaPrimary}
               <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </Link>
-            <Link to={service.ctaSecondaryLink} className="btn btn-ghost group">
+            </a>
+            <a href={service.ctaSecondaryLink} className="btn btn-ghost group">
               {service.ctaSecondary}
               <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </Link>
+            </a>
           </div>
         </div>
       </main>

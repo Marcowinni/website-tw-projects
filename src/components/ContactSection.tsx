@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Mail, Phone, MessageCircle, ArrowUpRight } from "lucide-react";
-import { useLanguage } from "../context/LanguageContext";
+import { useLanguage } from "../lib/i18n";
 
 const contact = {
   email: "info@tw-services.ch",

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+
 import { ArrowRight, ArrowUpRight } from "lucide-react";
-import { useLanguage } from "../context/LanguageContext";
+import { useLanguage } from "../lib/i18n";
 import { useEffect, useRef, useState } from "react";
 
 type Reference = {
@@ -31,8 +31,8 @@ function ProjectCard({ project, featured = false }: { project: Reference; featur
   const aspect = project.orientation === "portrait" ? "aspect-[5/6]" : "aspect-[16/10]";
 
   return (
-    <Link
-      to={`/projects#${project.id}`}
+    <a
+      href={`/projects#${project.id}`}
       className={`group block ${featured ? "lg:col-span-7" : "lg:col-span-5"}`}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -73,7 +73,7 @@ function ProjectCard({ project, featured = false }: { project: Reference; featur
         </div>
         <ArrowUpRight className="w-5 h-5 text-ink shrink-0 mt-1 transition-transform duration-500 ease-out-expo group-hover:translate-x-1 group-hover:-translate-y-1" />
       </div>
-    </Link>
+    </a>
   );
 }
 
@@ -128,10 +128,10 @@ export function ReferenceSection() {
           <p className="text-slate2 text-base sm:text-lg max-w-xl">
             {t.references.subtitle}
           </p>
-          <Link to="/projects" className="btn btn-primary group whitespace-nowrap">
+          <a href="/projects" className="btn btn-primary group whitespace-nowrap">
             {t.references.projekte_title}
             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-          </Link>
+          </a>
         </div>
       </div>
     </section>

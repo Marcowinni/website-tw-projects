@@ -1,4 +1,8 @@
 node_modules
+dist
+.astro
 .env
 .env.local
+.vercel
 tests/screenshots/
+*.log

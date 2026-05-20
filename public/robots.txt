@@ -2,4 +2,6 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.tw-services.ch/sitemap.xml
+# Generated automatically by @astrojs/sitemap at build time —
+# includes all static and dynamic routes.
+Sitemap: https://www.tw-services.ch/sitemap-index.xml

@@ -1,0 +1,59 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import { ProfileDetailPage } from '../../components/ProfileDetailPage'
+import de from '../../locales/de.json' with { type: 'json' }
+
+export function getStaticPaths() {
+  const team = (de as any).about?.team_details ?? {}
+  return Object.keys(team).map((id) => ({
+    params: { id },
+    props: { person: team[id] },
+  }))
+}
+
+const { id } = Astro.params
+const { person } = Astro.props
+const role = id === 'marco' ? (de as any).about?.marco_role : (de as any).about?.till_role
+
+const title = `${person?.name ?? id} — TW Services`
+const description = (person?.description ?? '').slice(0, 158)
+
+// Person schema with worksFor → Organization @id (defined in Layout default graph).
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Person',
+      '@id': `https://www.tw-services.ch/about/${id}#person`,
+      name: person?.name,
+      jobTitle: role,
+      description: person?.description,
+      image: person?.images?.[0]
+        ? new URL(person.images[0], 'https://www.tw-services.ch/').toString()
+        : undefined,
+      worksFor: { '@id': 'https://www.tw-services.ch/#organization' },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Start', item: 'https://www.tw-services.ch/' },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: person?.name ?? id,
+          item: `https://www.tw-services.ch/about/${id}`,
+        },
+      ],
+    },
+  ],
+}
+---
+
+<Layout
+  title={title}
+  description={description}
+  canonical={`https://www.tw-services.ch/about/${id}`}
+  jsonLd={jsonLd}
+>
+  <ProfileDetailPage id={id!} client:load />
+</Layout>

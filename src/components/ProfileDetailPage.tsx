@@ -1,13 +1,12 @@
-import { useParams, Link } from "react-router-dom";
-import { useLanguage } from "../context/LanguageContext";
+
+import { useLanguage } from "../lib/i18n";
 import { ArrowLeft, Heart } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { Navbar } from "./Navbar";
 import { FooterSection } from "./FooterSection";
 
-export function ProfileDetailPage() {
-  const { id } = useParams<{ id: string }>();
+export function ProfileDetailPage({ id }: { id: string }) {
   const { t } = useLanguage();
   const [imgIndex, setImgIndex] = useState(0);
 
@@ -33,13 +32,13 @@ export function ProfileDetailPage() {
       <Navbar />
       <main className="pt-32 pb-section-y">
         <div className="container-x max-w-5xl">
-          <Link
-            to="/#about"
+          <a
+            href="/#about"
             className="inline-flex items-center gap-2 text-sm text-slate2 hover:text-ink transition-colors mb-10 group"
           >
             <ArrowLeft className="w-4 h-4 transition-transform duration-300 group-hover:-translate-x-1" />
             {t.about.back_button}
-          </Link>
+          </a>
 
           <div className="grid grid-cols-12 gap-x-6 gap-y-10 lg:gap-x-12">
             {/* image swiper */}
