@@ -1,0 +1,5 @@
+# robots.txt for tw-services.ch
+User-agent: *
+Allow: /
+
+Sitemap: https://www.tw-services.ch/sitemap.xml
