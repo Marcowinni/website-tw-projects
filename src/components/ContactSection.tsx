@@ -4,8 +4,8 @@ import { useLanguage } from "../lib/i18n";
 
 const contact = {
   email: "info@tw-services.ch",
-  phone: "+41 79 943 26 30",
-  whatsappLink: "https://wa.me/41799432630",
+  phone: "+41 44 505 63 72",
+  whatsappLink: "https://wa.me/41445056372",
 };
 
 type Channel = {
