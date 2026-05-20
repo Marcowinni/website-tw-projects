@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
+
 import { Mail, Phone, MapPin, ArrowUpRight } from "lucide-react";
-import { useLanguage } from "../context/LanguageContext";
+import { useLanguage } from "../lib/i18n";
 
 export function FooterSection() {
   const { t } = useLanguage();
@@ -12,10 +12,10 @@ export function FooterSection() {
         <div className="grid grid-cols-12 gap-x-6 gap-y-12 lg:gap-x-10">
           {/* brand */}
           <div className="col-span-12 lg:col-span-5">
-            <Link to="/" className="inline-flex items-center gap-2.5 mb-6 group" aria-label="TW Services Startseite">
+            <a href="/" className="inline-flex items-center gap-2.5 mb-6 group" aria-label="TW Services Startseite">
               <img src="/logo.png" alt="" className="h-9 w-auto" />
               <span className="font-semibold text-ink tracking-tight">TW Services</span>
-            </Link>
+            </a>
             <p className="text-slate2 text-[15px] leading-relaxed max-w-md mb-8">
               {t.footer.description}
             </p>
@@ -94,8 +94,8 @@ export function FooterSection() {
               {t.footer.company}
             </h4>
             <ul className="space-y-3 text-sm">
-              <li><Link to="/impressum" className="text-slate2 hover:text-ink transition-colors">{t.footer.links.imprint}</Link></li>
-              <li><Link to="/agb" className="text-slate2 hover:text-ink transition-colors">{t.footer.links.terms}</Link></li>
+              <li><a href="/impressum" className="text-slate2 hover:text-ink transition-colors">{t.footer.links.imprint}</a></li>
+              <li><a href="/agb" className="text-slate2 hover:text-ink transition-colors">{t.footer.links.terms}</a></li>
             </ul>
           </div>
         </div>

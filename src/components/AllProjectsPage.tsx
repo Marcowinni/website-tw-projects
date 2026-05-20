@@ -1,5 +1,5 @@
-import { useLanguage } from "../context/LanguageContext";
-import { Link, useLocation } from "react-router-dom";
+import { useLanguage } from "../lib/i18n";
+
 import { ArrowLeft, ArrowRight, Volume2, VolumeX } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { Navbar } from "./Navbar";
@@ -7,7 +7,14 @@ import { FooterSection } from "./FooterSection";
 
 export default function AllProjectsPage() {
   const { t } = useLanguage();
-  const { hash } = useLocation();
+  // Astro full-page nav: read hash from window directly on mount instead of via react-router.
+  const [hash, setHash] = useState<string>('');
+  useEffect(() => {
+    setHash(window.location.hash || '');
+    const onHashChange = () => setHash(window.location.hash || '');
+    window.addEventListener('hashchange', onHashChange);
+    return () => window.removeEventListener('hashchange', onHashChange);
+  }, []);
 
   const projects: any[] = t.references.items;
 
@@ -38,13 +45,13 @@ export default function AllProjectsPage() {
       <Navbar />
       <main className="pt-32 pb-section-y">
         <div className="container-x max-w-content">
-          <Link
-            to="/#references"
+          <a
+            href="/#references"
             className="inline-flex items-center gap-2 text-sm text-slate2 hover:text-ink transition-colors mb-10 group"
           >
             <ArrowLeft className="w-4 h-4 transition-transform duration-300 group-hover:-translate-x-1" />
             Zurück
-          </Link>
+          </a>
 
           {/* head */}
           <div className="grid grid-cols-12 gap-x-6 lg:gap-x-10 mb-16 sm:mb-20">
@@ -147,10 +154,10 @@ export default function AllProjectsPage() {
                           <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                         </a>
                       ) : (
-                        <Link to={project.link} className="btn btn-primary group">
+                        <a href={project.link} className="btn btn-primary group">
                           {project.ctaLabel ?? "Referenz ansehen"}
                           <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-                        </Link>
+                        </a>
                       )
                     )}
                   </div>

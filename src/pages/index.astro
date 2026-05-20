@@ -1,0 +1,26 @@
+---
+import Layout from '../layouts/Layout.astro'
+import { Navbar } from '../components/Navbar'
+import { HeroSection } from '../components/HeroSection'
+import { ServicesSection } from '../components/ServicesSection'
+import { ReferenceSection } from '../components/ReferenceSection'
+import { AboutSection } from '../components/AboutSection'
+import { ContactSection } from '../components/ContactSection'
+import { FooterSection } from '../components/FooterSection'
+---
+
+<Layout
+  title="TW Services — Premium-Werbefilme für Neubauprojekte | DACH"
+  description="TW Services produziert KI-gestützte Werbefilme für Bauträger und Projektentwickler im DACH-Raum. Mehr qualifizierte Anfragen, kürzere Vermarktungsdauer."
+  canonical="https://www.tw-services.ch/"
+>
+  <Navbar client:load />
+  <main>
+    <HeroSection client:load />
+    <ServicesSection client:visible />
+    <ReferenceSection client:visible />
+    <AboutSection client:visible />
+    <ContactSection client:visible />
+  </main>
+  <FooterSection client:visible />
+</Layout>

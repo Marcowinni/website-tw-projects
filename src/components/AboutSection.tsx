@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
+
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import { useLanguage } from "../context/LanguageContext";
+import { useLanguage } from "../lib/i18n";
 
 type Person = {
   id: string;
@@ -67,8 +67,8 @@ export function AboutSection() {
               transition={{ duration: 0.7, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
               viewport={{ once: true, margin: "-80px" }}
             >
-              <Link
-                to={`/about/${p.id}`}
+              <a
+                href={`/about/${p.id}`}
                 className="group block bg-cloud-warm border border-line transition-all duration-500 ease-out-quart hover:border-ink overflow-hidden"
               >
                 <div className="aspect-[5/4] overflow-hidden bg-cloud-deep relative">
@@ -94,7 +94,7 @@ export function AboutSection() {
                     {p.bio}
                   </p>
                 </div>
-              </Link>
+              </a>
             </motion.div>
           ))}
         </div>

@@ -1,5 +1,5 @@
 import { TestimonialCarousel } from "./ui/testimonial";
-import { useLanguage } from "../context/LanguageContext";
+import { useLanguage } from "../lib/i18n";
 
 export function TestimonialSection() {
   const { t } = useLanguage();

@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
+
 import { ArrowLeft } from "lucide-react";
-import { useLanguage } from "../context/LanguageContext";
+import { useLanguage } from "../lib/i18n";
 import { Navbar } from "./Navbar";
 import { FooterSection } from "./FooterSection";
 
@@ -12,14 +12,14 @@ export function TermsPage() {
       <Navbar />
       <main className="pt-32 pb-section-y">
         <div className="container-x max-w-3xl">
-          <Link
-            to="/#about"
+          <a
+            href="/#about"
             className="inline-flex items-center gap-2 text-sm text-slate2 hover:text-ink transition-colors mb-10 group"
           >
             <ArrowLeft className="w-4 h-4 transition-transform duration-300 group-hover:-translate-x-1" />
             {/* @ts-ignore */}
             {t.legal.back_home}
-          </Link>
+          </a>
 
           {/* @ts-ignore */}
           <h1 className="font-display font-normal text-5xl lg:text-6xl text-ink tracking-tight leading-[1.05] mb-12">

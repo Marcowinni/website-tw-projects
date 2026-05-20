@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+
 import { Menu, X, ArrowUpRight } from "lucide-react";
-import { useLanguage } from "../context/LanguageContext";
+import { useLanguage } from "../lib/i18n";
 
 export function Navbar() {
   const { t } = useLanguage();
-  const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -16,9 +15,8 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => {
-    setOpen(false);
-  }, [location.pathname, location.hash]);
+  // In Astro every nav click triggers a full page reload, so the drawer
+  // closes naturally — no useLocation-based effect needed.
 
   const navItems = [
     { name: t.header.nav.services, href: "/#services" },
@@ -60,7 +58,7 @@ export function Navbar() {
         }`}
       >
         <div className="container-x flex items-center justify-between h-[64px] sm:h-[72px]">
-          <Link to="/" className="flex items-center gap-2.5 group" aria-label="TW Services Startseite">
+          <a href="/" className="flex items-center gap-2.5 group" aria-label="TW Services Startseite">
             <img
               src="/logo.png"
               alt="TW Services"
@@ -69,7 +67,7 @@ export function Navbar() {
             <span className="font-semibold text-ink tracking-tight text-[15px] hidden sm:inline-block">
               TW Services
             </span>
-          </Link>
+          </a>
 
           <nav className="hidden md:flex items-center gap-8">
             {navItems.map((item) => (
