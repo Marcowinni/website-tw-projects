@@ -8,12 +8,13 @@
 // they continue to fall through to the SPA shell.
 
 import { spawn } from 'node:child_process'
-import { mkdir, writeFile, readFile, copyFile } from 'node:fs/promises'
+import { mkdir, writeFile } from 'node:fs/promises'
 import { existsSync } from 'node:fs'
 import { resolve, dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import net from 'node:net'
 import { chromium } from 'playwright'
+import sparticuzChromium from '@sparticuz/chromium'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = resolve(__dirname, '..')
@@ -130,7 +131,23 @@ async function main() {
     await waitForServer(previewUrl)
     console.log(`✓ Server ready at ${previewUrl}`)
 
-    const browser = await chromium.launch({ headless: true })
+    // On Vercel/Linux we need @sparticuz/chromium because the build image
+    // lacks libnspr4/libnss3. Locally (mac/win), use Playwright's bundled
+    // Chromium for convenience.
+    const useSparticuz = process.env.VERCEL === '1' || process.platform === 'linux'
+    let browser
+    if (useSparticuz) {
+      const execPath = await sparticuzChromium.executablePath()
+      console.log(`→ Launching @sparticuz/chromium at ${execPath}`)
+      browser = await chromium.launch({
+        executablePath: execPath,
+        args: sparticuzChromium.args,
+        headless: true,
+      })
+    } else {
+      console.log('→ Launching Playwright bundled Chromium')
+      browser = await chromium.launch({ headless: true })
+    }
     const ctx = await browser.newContext({
       viewport: { width: 1280, height: 800 },
       userAgent: 'Mozilla/5.0 (Prerender; tw-services Playwright snapshotter)',
