@@ -95,6 +95,7 @@ export function FooterSection() {
             </h4>
             <ul className="space-y-3 text-sm">
               <li><a href="/impressum" className="text-slate2 hover:text-ink transition-colors">{t.footer.links.imprint}</a></li>
+              <li><a href="/datenschutz" className="text-slate2 hover:text-ink transition-colors">{t.footer.links.privacy}</a></li>
               <li><a href="/agb" className="text-slate2 hover:text-ink transition-colors">{t.footer.links.terms}</a></li>
             </ul>
           </div>
