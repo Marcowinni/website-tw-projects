@@ -27,9 +27,10 @@ export default defineConfig({
     }),
     sitemap({
       filter: (page) =>
-        // /impressum, /datenschutz and /agb carry noindex; keep them out of the sitemap too.
+        // /impressum, /datenschutz, /avv and /agb carry noindex; keep them out of the sitemap too.
         !page.includes('/impressum') &&
         !page.includes('/datenschutz') &&
+        !page.includes('/avv') &&
         !page.includes('/agb'),
     }),
   ],
