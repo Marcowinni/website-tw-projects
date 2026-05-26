@@ -15,6 +15,11 @@ import vercel from '@astrojs/vercel'
 export default defineConfig({
   site: 'https://www.tw-services.ch',
   output: 'static',
+  // The AVV is maintained once, company-wide, on the parent-company site;
+  // /avv forwards there instead of duplicating the contract here.
+  redirects: {
+    '/avv': { status: 301, destination: 'https://www.tw-p.ch/avv' },
+  },
   adapter: vercel({
     webAnalytics: { enabled: true },
   }),
@@ -27,10 +32,9 @@ export default defineConfig({
     }),
     sitemap({
       filter: (page) =>
-        // /impressum, /datenschutz, /avv and /agb carry noindex; keep them out of the sitemap too.
+        // /impressum, /datenschutz and /agb carry noindex; keep them out of the sitemap too.
         !page.includes('/impressum') &&
         !page.includes('/datenschutz') &&
-        !page.includes('/avv') &&
         !page.includes('/agb'),
     }),
   ],
