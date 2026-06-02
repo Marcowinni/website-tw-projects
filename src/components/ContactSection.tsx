@@ -89,8 +89,8 @@ export function ContactSection() {
           </div>
 
           {/* channels */}
-          <div className="col-span-12 lg:col-span-7 lg:pl-8">
-            <div className="space-y-3">
+          <div className="col-span-12 lg:col-span-7 lg:pl-8 flex flex-col">
+            <div className="space-y-4 flex-1 flex flex-col justify-center">
               {channels.map((c, i) => (
                 <motion.a
                   key={c.label}
@@ -103,19 +103,19 @@ export function ContactSection() {
                   viewport={{ once: true, margin: "-40px" }}
                   className="group block border border-cloud/15 hover:border-cloud transition-all duration-500 ease-out-quart relative overflow-hidden"
                 >
-                  <div className="grid grid-cols-12 gap-x-4 items-center px-5 sm:px-7 py-6 sm:py-8 relative z-10">
+                  <div className="grid grid-cols-12 gap-x-4 items-center px-6 sm:px-8 py-8 sm:py-10 relative z-10">
                     <div className="col-span-2 sm:col-span-1">
                       <c.icon className="w-5 h-5 text-cloud/80 group-hover:text-cloud transition-colors" />
                     </div>
-                    <div className="col-span-10 sm:col-span-4">
-                      <div className="text-[10px] uppercase tracking-eyebrow font-semibold text-cloud/60 mb-1.5">
+                    <div className="col-span-10 sm:col-span-5">
+                      <div className="text-[10px] uppercase tracking-eyebrow font-semibold text-cloud/60 mb-2">
                         {c.label}
                       </div>
-                      <div className="text-cloud font-medium text-base sm:text-lg break-all">
+                      <div className="text-cloud font-medium text-lg sm:text-xl break-all">
                         {c.value}
                       </div>
                     </div>
-                    <div className="col-span-12 sm:col-span-5 mt-2 sm:mt-0 text-cloud/60 text-sm">
+                    <div className="col-span-12 sm:col-span-4 mt-2 sm:mt-0 text-cloud/60 text-sm">
                       {c.meta}
                     </div>
                     <div className="col-span-12 sm:col-span-2 flex sm:justify-end mt-3 sm:mt-0">
@@ -130,6 +130,24 @@ export function ContactSection() {
                 </motion.a>
               ))}
             </div>
+
+            {/* response promise */}
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
+              viewport={{ once: true, margin: "-40px" }}
+              className="mt-6 px-6 sm:px-8 py-6 border-t border-cloud/10"
+            >
+              <div className="flex items-start gap-4">
+                <div className="text-[10px] uppercase tracking-eyebrow font-semibold text-cloud/60 shrink-0 w-24 pt-1">
+                  Antwort
+                </div>
+                <p className="text-cloud/90 text-[15px] leading-relaxed">
+                  Persönliche Rückmeldung innerhalb von <em className="not-italic font-display italic text-navy-300">24 Stunden</em> — direkt aus dem Team, ohne Pipeline.
+                </p>
+              </div>
+            </motion.div>
           </div>
         </div>
       </div>
