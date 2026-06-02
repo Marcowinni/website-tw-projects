@@ -1,11 +1,10 @@
 import { motion } from "framer-motion";
-import { Mail, Phone, MessageCircle, ArrowUpRight } from "lucide-react";
+import { Mail, Phone, ArrowUpRight } from "lucide-react";
 import { useLanguage } from "../lib/i18n";
 
 const contact = {
   email: "info@tw-services.ch",
   phone: "+41 44 505 63 72",
-  whatsappLink: "https://wa.me/41445056372",
 };
 
 type Channel = {
@@ -33,13 +32,6 @@ export function ContactSection() {
       value: contact.phone,
       href: `tel:${contact.phone.replace(/\s/g, "")}`,
       meta: "Mo–Fr · 09–18 Uhr",
-    },
-    {
-      icon: MessageCircle,
-      label: t.kontakt.whatsapp_label,
-      value: "WhatsApp Chat starten",
-      href: contact.whatsappLink,
-      meta: "Schnellster Weg",
     },
   ];
 
@@ -137,23 +129,6 @@ export function ContactSection() {
                   />
                 </motion.a>
               ))}
-            </div>
-
-            {/* WhatsApp QR */}
-            <div className="mt-8 flex items-center gap-5 p-5 border border-cloud/15 bg-cloud/[0.03]">
-              <img
-                src="/whatsapp-qr.png"
-                alt="WhatsApp QR-Code"
-                className="w-20 h-20 sm:w-24 sm:h-24 bg-cloud p-1.5 shrink-0 object-contain"
-              />
-              <div>
-                <div className="text-[10px] uppercase tracking-eyebrow font-semibold text-cloud/60 mb-1">
-                  {t.kontakt.whatsapp_label}
-                </div>
-                <p className="text-cloud/90 text-sm leading-relaxed">
-                  Code mit Ihrer Smartphone-Kamera scannen — Chat öffnet sich direkt in WhatsApp.
-                </p>
-              </div>
             </div>
           </div>
         </div>
