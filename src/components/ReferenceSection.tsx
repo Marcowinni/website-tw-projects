@@ -81,12 +81,11 @@ export function ReferenceSection() {
   const { t } = useLanguage();
 
   const projects: Reference[] = t.references.items as Reference[];
-  const featured = [
-    projects.find((p) => p.id === "bildstoeckli-goldig-wohnen"),
-    projects.find((p) => p.id === "psschubiger-projekt-schmerikon"),
-    projects.find((p) => p.id === "rieder-garbenweg"),
-    projects.find((p) => p.id === "psschubiger-herrengasse"),
-  ].filter(Boolean) as Reference[];
+  const goldig = projects.find((p) => p.id === "bildstoeckli-goldig-wohnen");
+  const schmerikon = projects.find((p) => p.id === "psschubiger-projekt-schmerikon");
+  const garbenweg = projects.find((p) => p.id === "rieder-garbenweg");
+  const bregenz = projects.find((p) => p.id === "riedler-bregenz");
+  const herrengasse = projects.find((p) => p.id === "psschubiger-herrengasse");
 
   return (
     <section id="references" className="py-section-y border-t border-line">
@@ -113,14 +112,17 @@ export function ReferenceSection() {
           </div>
         </div>
 
-        {/* asymmetric grid — Goldig Wohnen featured + Schmerikon partner row 1; Garbenweg partner + Herrengasse featured row 2 */}
+        {/* asymmetric grid — row 1: Goldig Wohnen featured + Schmerikon partner; row 2: Garbenweg + Bregenz stacked in left col + Herrengasse featured right */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-6 gap-y-10 lg:gap-x-8 lg:gap-y-12 mb-16 sm:mb-20">
-          {featured.slice(0, 2).map((p, i) => (
-            <ProjectCard project={p} featured={i === 0} key={p.id} />
-          ))}
-          {featured.slice(2, 4).map((p, i) => (
-            <ProjectCard project={p} featured={i === 1} key={p.id} />
-          ))}
+          {goldig && <ProjectCard project={goldig} featured key={goldig.id} />}
+          {schmerikon && <ProjectCard project={schmerikon} key={schmerikon.id} />}
+          {(garbenweg || bregenz) && (
+            <div className="lg:col-span-5 flex flex-col gap-y-10 lg:gap-y-12">
+              {garbenweg && <ProjectCard project={garbenweg} key={garbenweg.id} />}
+              {bregenz && <ProjectCard project={bregenz} key={bregenz.id} />}
+            </div>
+          )}
+          {herrengasse && <ProjectCard project={herrengasse} featured key={herrengasse.id} />}
         </div>
 
         {/* CTA strip */}
