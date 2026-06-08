@@ -24,9 +24,13 @@ export default function AllProjectsPage() {
   const [mutedById, setMutedById] = useState<Record<string, boolean>>({});
 
   const sortedProjects = useMemo(() => {
-    const bildstoeckli = projects.filter((p) => p.groupId === "bildstoeckli");
-    const rest = projects.filter((p) => p.groupId !== "bildstoeckli");
-    return [...bildstoeckli, ...rest];
+    // Display order: Bildstöckli (Goldig Wohnen) → Rieder (Garbenweg) → rest in JSON order
+    const order = ["bildstoeckli", "rieder"];
+    const priority = (p: any) => {
+      const idx = order.indexOf(p.groupId);
+      return idx === -1 ? order.length : idx;
+    };
+    return [...projects].sort((a, b) => priority(a) - priority(b));
   }, [projects]);
 
   // scroll to anchor after mount

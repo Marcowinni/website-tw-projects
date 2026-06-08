@@ -84,7 +84,7 @@ export function ReferenceSection() {
   const featured = [
     projects.find((p) => p.id === "bildstoeckli-goldig-wohnen"),
     projects.find((p) => p.id === "psschubiger-projekt-schmerikon"),
-    projects.find((p) => p.id === "psschubiger-projekt-eschenbach"),
+    projects.find((p) => p.id === "rieder-garbenweg"),
     projects.find((p) => p.id === "psschubiger-herrengasse"),
   ].filter(Boolean) as Reference[];
 
@@ -113,7 +113,7 @@ export function ReferenceSection() {
           </div>
         </div>
 
-        {/* asymmetric grid — Goldig Wohnen featured + Schmerikon partner row 1; Eschenbach partner + Herrengasse featured row 2 */}
+        {/* asymmetric grid — Goldig Wohnen featured + Schmerikon partner row 1; Garbenweg partner + Herrengasse featured row 2 */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-6 gap-y-10 lg:gap-x-8 lg:gap-y-12 mb-16 sm:mb-20">
           {featured.slice(0, 2).map((p, i) => (
             <ProjectCard project={p} featured={i === 0} key={p.id} />

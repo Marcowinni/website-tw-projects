@@ -192,7 +192,24 @@
       { "id": "video", "label": "KI Marketing Videos" }
     ],
     "items": [
-      
+      {
+        "id": "rieder-garbenweg",
+        "name": "Garbenweg",
+        "groupId": "rieder",
+        "groupLabel": "Rieder Immobilien AG",
+        "slug": "rieder-garbenweg",
+        "description": "Projektvideo, Kurz-Videos für Ad-Outreach und Landing-Page für die Überbauung Garbenweg.",
+        "forWhom": "Für Immobilienprojekte und Überbauungen",
+        "deliverable": "Projektvideo mit Storyboard und klarer CTA, mehrere Kurz-Videos für gezielten Ad-Outreach sowie eine vollständig ausformulierte Landing-Page – als zusammenhängendes Vermarktungs-Paket.",
+        "result": "Ein konsistentes Vermarktungs-Asset, das die Überbauung von der ersten Werbeeinblendung bis zur Anfrage führt und das gesamte Verkaufsmaterial bündelt.",
+        "link": "/#contact",
+        "ctaLabel": "Kontakt aufnehmen",
+        "logo": "/references/logo_rieder.png",
+        "video": "/demovideos/demo_rieder_garbenweg.mp4",
+        "serviceCategory": "video",
+        "tags": ["Marketing Video", "Immobilien", "Landing-Page"],
+        "orientation": "landscape"
+      },
       {
         "id": "psschubiger-projekt-schmerikon",
         "name": "Projekt Schmerikon",
@@ -228,6 +245,24 @@
         "serviceCategory": "video",
         "tags": ["Marketing Video", "Immobilien"],
         "orientation": "portrait"
+      },
+      {
+        "id": "riedler-bregenz",
+        "name": "Bauprojekt Bregenz",
+        "groupId": "riedler-wohnbau",
+        "groupLabel": "Riedler Wohnbau GmbH",
+        "slug": "riedler-bregenz",
+        "description": "Vermarktungsasset für ein gesamtes Bauprojekt in Bregenz – ausgerichtet auf Investoren und Baumeister für die Komplettübernahme.",
+        "forWhom": "Gezielter Outreach an Investoren und Baumeister, die das gesamte Bauprojekt in Bregenz übernehmen sollen.",
+        "deliverable": "Vermarktungsasset auf Basis gezielter Marktforschung und einer ausgearbeiteten Vermarktungsstrategie – inkl. Projektvideo, Lead-Funnel, Landing-Page und vollständigem Vertriebs-Setup, um das Projekt strukturiert an mögliche Käufer heranzutragen.",
+        "result": "Ein in sich geschlossenes Vermarktungs-Asset, das das gesamte Bauprojekt schlüssig präsentiert und qualifizierte Investoren entlang des Lead-Funnels in den Direktkontakt führt.",
+        "link": "/#contact",
+        "ctaLabel": "Kontakt aufnehmen",
+        "logo": "/references/logo_riedler.png",
+        "video": "/demovideos/demo_bregenz.mp4",
+        "serviceCategory": "video",
+        "tags": ["Marketing Video", "Immobilien", "Investoren-Outreach"],
+        "orientation": "landscape"
       },
       {
         "id": "psschubiger-projekt-wald",
