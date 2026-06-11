@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
-import { Mail, Phone, ArrowUpRight } from "lucide-react";
+import { Mail, Phone, ArrowUpRight, CalendarCheck } from "lucide-react";
 import { useLanguage } from "../lib/i18n";
 
 const contact = {
   email: "info@tw-services.ch",
   phone: "+41 44 505 63 72",
+  booking: "https://termin.tw-p.ch/tw-services",
 };
 
 type Channel = {
@@ -91,6 +92,38 @@ export function ContactSection() {
           {/* channels */}
           <div className="col-span-12 lg:col-span-7 lg:pl-8 flex flex-col">
             <div className="space-y-4 flex-1 flex flex-col justify-center">
+              {/* primary CTA — termin buchen */}
+              <motion.a
+                href={contact.booking}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                viewport={{ once: true, margin: "-40px" }}
+                className="group block bg-cloud text-ink hover:bg-cloud/90 transition-all duration-500 ease-out-quart relative overflow-hidden"
+              >
+                <div className="grid grid-cols-12 gap-x-4 items-center px-6 sm:px-8 py-8 sm:py-10 relative z-10">
+                  <div className="col-span-2 sm:col-span-1">
+                    <CalendarCheck className="w-5 h-5 text-ink/80 group-hover:text-ink transition-colors" />
+                  </div>
+                  <div className="col-span-10 sm:col-span-7">
+                    <div className="text-[10px] uppercase tracking-eyebrow font-semibold text-ink/50 mb-2">
+                      Termin buchen
+                    </div>
+                    <div className="text-ink font-medium text-lg sm:text-xl">
+                      Erstgespräch direkt buchen
+                    </div>
+                    <div className="text-ink/60 text-sm mt-1">
+                      15–30 Min · kostenlos &amp; unverbindlich
+                    </div>
+                  </div>
+                  <div className="col-span-12 sm:col-span-4 flex sm:justify-end mt-3 sm:mt-0">
+                    <ArrowUpRight className="w-5 h-5 text-ink transition-transform duration-500 ease-out-expo group-hover:translate-x-1 group-hover:-translate-y-1" />
+                  </div>
+                </div>
+              </motion.a>
+
               {channels.map((c, i) => (
                 <motion.a
                   key={c.label}
