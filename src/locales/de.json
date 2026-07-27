@@ -335,6 +335,23 @@
         "serviceCategory": "video",
         "tags": ["Premium-Werbefilm", "Time-to-Sell System"],
         "orientation": "portrait"
+      },
+      {
+        "id": "creatio-the-six",
+        "name": "The Six, Aeugst am Albis",
+        "groupId": "creatio",
+        "groupLabel": "CREATIO AG",
+        "slug": "creatio-the-six",
+        "description": "Projektvideo und komplettes Vermarktungssystem für die Neubau-Überbauung «The Six» in Aeugst am Albis – 6 gehobene Doppelhäuser.",
+        "forWhom": "Für Immobilienprojekte und Überbauungen",
+        "deliverable": "Projektvideo mit Storyboard und klarer CTA, Landing-Page mit Qualifizierungsformular sowie direkte Lead-Zustellung ins CRM des Kunden.",
+        "result": "Qualifizierte Kaufinteressenten für die Doppelhäuser – strukturiert und direkt im CRM des Kunden.",
+        "link": "/#contact",
+        "ctaLabel": "Kontakt aufnehmen",
+        "video": "/demovideos/demo_creatio_the_six.mp4",
+        "serviceCategory": "video",
+        "tags": ["Marketing Video", "Immobilien", "Landing-Page"],
+        "orientation": "landscape"
       }
     ]
   },
