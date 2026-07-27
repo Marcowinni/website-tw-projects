@@ -24,8 +24,8 @@ export default function AllProjectsPage() {
   const [mutedById, setMutedById] = useState<Record<string, boolean>>({});
 
   const sortedProjects = useMemo(() => {
-    // Display order: Bildstöckli (Goldig Wohnen) → Rieder (Garbenweg) → rest in JSON order
-    const order = ["bildstoeckli", "rieder"];
+    // Display order: Creatio (The Six) → Bildstöckli (Goldig Wohnen) → Rieder (Garbenweg) → rest in JSON order
+    const order = ["creatio", "bildstoeckli", "rieder"];
     const priority = (p: any) => {
       const idx = order.indexOf(p.groupId);
       return idx === -1 ? order.length : idx;
